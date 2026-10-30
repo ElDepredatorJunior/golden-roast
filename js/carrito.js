@@ -105,6 +105,7 @@ class CartManager {
     this.cart = this.storage ? this.storage.getCart() : [];
     this.initDrawer();
     this.updateBadges();
+    this.renderCartPage();
 
     // Listen to sync events from other tabs
     window.addEventListener('golden_storage_sync', (e) => {
@@ -112,12 +113,14 @@ class CartManager {
         this.cart = this.storage.getCart();
         this.updateBadges();
         this.renderDrawer();
+        this.renderCartPage();
       }
     });
 
     // Listen to language changes
     window.addEventListener('golden_lang_changed', () => {
       this.renderDrawer();
+      this.renderCartPage();
     });
   }
 
@@ -127,6 +130,7 @@ class CartManager {
     }
     this.updateBadges();
     this.renderDrawer();
+    this.renderCartPage();
     window.dispatchEvent(new CustomEvent('golden_cart_updated', { detail: { cart: this.cart } }));
   }
 
@@ -456,6 +460,125 @@ class CartManager {
 
     if (subtotalEl) {
       subtotalEl.textContent = `L ${subtotal.toFixed(2)}`;
+    }
+  }
+
+
+  renderCartPage() {
+    const tableBody = document.getElementById('cartTableBody');
+    const emptyNotice = document.getElementById('cartEmptyNotice');
+    const tableWrapper = document.getElementById('cartTableWrapper');
+    const subtotalEl = document.getElementById('summarySubtotal');
+    const deliveryEl = document.getElementById('summaryDelivery');
+    const deliveryBar = document.getElementById('deliveryProgressBar');
+    const deliveryText = document.getElementById('deliveryProgressText');
+    const discountRow = document.getElementById('summaryDiscountRow');
+    const discountEl = document.getElementById('summaryDiscount');
+
+    if (!tableBody) return;
+
+    const lang = window.i18n ? window.i18n.currentLang : 'en';
+
+    if (!this.cart || this.cart.length === 0) {
+      if (tableWrapper) tableWrapper.style.display = 'none';
+      if (emptyNotice) emptyNotice.style.display = 'block';
+      if (subtotalEl) subtotalEl.textContent = 'L 0.00';
+      if (deliveryEl) deliveryEl.textContent = 'L 0.00';
+      if (deliveryBar) deliveryBar.style.width = '0%';
+      if (discountRow) discountRow.style.display = 'none';
+      return;
+    }
+
+    if (tableWrapper) tableWrapper.style.display = 'block';
+    if (emptyNotice) emptyNotice.style.display = 'none';
+
+    tableBody.innerHTML = '';
+
+    this.cart.forEach(item => {
+      const displayName = lang === 'es' ? (item.name_es || item.name) : item.name;
+      const itemSubtotal = (Number(item.price) * Number(item.quantity)).toFixed(2);
+
+      const tr = document.createElement('tr');
+      tr.className = 'cart-table-row';
+      tr.innerHTML = `
+        <td class="cart-td-product">
+          <div class="cart-product-cell">
+            <img src="${item.image}" alt="${displayName}" class="cart-cell-thumb">
+            <div class="cart-cell-meta">
+              <div class="cart-cell-title">${displayName}</div>
+              <div class="cart-cell-sub">${item.category || 'Cosmética Natural'}</div>
+            </div>
+          </div>
+        </td>
+        <td class="cart-td-price">L ${Number(item.price).toFixed(2)}</td>
+        <td class="cart-td-qty">
+          <div class="cart-qty-inline">
+            <button type="button" class="btn-cell-qty" onclick="window.cartManager.updateQuantity('${item.id}', -1)">-</button>
+            <span class="cell-qty-num">${item.quantity}</span>
+            <button type="button" class="btn-cell-qty" onclick="window.cartManager.updateQuantity('${item.id}', 1)">+</button>
+          </div>
+        </td>
+        <td class="cart-td-subtotal">L ${itemSubtotal}</td>
+        <td class="cart-td-remove">
+          <button type="button" class="btn-cell-remove" onclick="window.cartManager.removeItem('${item.id}')" title="Eliminar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </button>
+        </td>
+      `;
+      tableBody.appendChild(tr);
+    });
+
+    const totals = this.storage ? this.storage.calculateTotals() : { subtotal: this.getSubtotal(), discount: 0, delivery: (this.getSubtotal() >= 300 ? 0 : 40), total: 0 };
+    if (subtotalEl) subtotalEl.textContent = `L ${totals.subtotal.toFixed(2)}`;
+    if (deliveryEl) deliveryEl.textContent = totals.delivery === 0 ? (lang === 'es' ? '¡Gratis!' : 'Free!') : `L ${totals.delivery.toFixed(2)}`;
+    
+    if (discountRow && discountEl) {
+      if (totals.discount > 0) {
+        discountRow.style.display = 'flex';
+        discountEl.textContent = `-L ${totals.discount.toFixed(2)}`;
+      } else {
+        discountRow.style.display = 'none';
+      }
+    }
+
+    if (deliveryBar) {
+      const pct = Math.min(100, Math.round((totals.subtotal / 300) * 100));
+      deliveryBar.style.width = pct + '%';
+      if (deliveryText) {
+        if (totals.subtotal >= 300) {
+          deliveryText.textContent = lang === 'es' ? '🎉 ¡Calificas para entrega gratis en Comayagua!' : '🎉 You unlocked free campus delivery in Comayagua!';
+        } else {
+          const diff = (300 - totals.subtotal).toFixed(2);
+          deliveryText.textContent = lang === 'es' ? `Añade L ${diff} más para envío gratis` : `Add L ${diff} more for free delivery`;
+        }
+      }
+    }
+
+    const btnCoupon = document.getElementById('btnApplyCoupon');
+    const couponInput = document.getElementById('couponInput');
+    const couponFeedback = document.getElementById('couponFeedback');
+    if (btnCoupon && couponInput && !btnCoupon._initialized) {
+      btnCoupon._initialized = true;
+      btnCoupon.addEventListener('click', (e) => {
+        e.preventDefault();
+        const code = couponInput.value.trim().toUpperCase();
+        if (code === 'GOLDEN10') {
+          if (this.storage) this.storage.setDiscount(0.10);
+          if (couponFeedback) {
+            couponFeedback.style.color = '#15803d';
+            couponFeedback.textContent = lang === 'es' ? '✓ ¡Cupón GOLDEN10 aplicado! (10% OFF)' : '✓ Coupon GOLDEN10 applied! (10% OFF)';
+          }
+          this.renderCartPage();
+        } else {
+          if (couponFeedback) {
+            couponFeedback.style.color = '#b91c1c';
+            couponFeedback.textContent = lang === 'es' ? 'Código no válido.' : 'Invalid coupon code.';
+          }
+        }
+      });
     }
   }
 

@@ -146,15 +146,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. FAQ Accordion
+  // 5. FAQ Accordion (Universal Mobile & Desktop Support)
   document.querySelectorAll('.faq-item').forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
       question.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        const isOpen = item.classList.contains('active') || item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active', 'open');
+        });
         if (!isOpen) {
-          item.classList.add('open');
+          item.classList.add('active', 'open');
         }
       });
     }
@@ -227,38 +229,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Background Cursor Spotlight & Magnetic Follower
-  const cursorGlow = document.createElement('div');
-  cursorGlow.className = 'cursor-interactive-glow';
-  document.body.appendChild(cursorGlow);
+  // Interactive Background Cursor Spotlight (Desktop Mouse Only - Zero Mobile Overhead)
+  const isDesktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches && window.innerWidth > 992;
+  if (isDesktopPointer) {
+    const cursorGlow = document.createElement('div');
+    cursorGlow.className = 'cursor-interactive-glow';
+    document.body.appendChild(cursorGlow);
 
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let currentX = mouseX;
-  let currentY = mouseY;
-  let isMoving = false;
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentX = mouseX;
+    let currentY = mouseY;
+    let isMoving = false;
+    let animId = null;
 
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    if (!isMoving) {
-      cursorGlow.style.opacity = '1';
-      isMoving = true;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!isMoving) {
+        cursorGlow.style.opacity = '1';
+        isMoving = true;
+        if (!animId) animId = requestAnimationFrame(renderCursorMesh);
+      }
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      cursorGlow.style.opacity = '0';
+      isMoving = false;
+    });
+
+    function renderCursorMesh() {
+      if (!isMoving) {
+        animId = null;
+        return;
+      }
+      currentX += (mouseX - currentX) * 0.12;
+      currentY += (mouseY - currentY) * 0.12;
+      cursorGlow.style.transform = 'translate3d(' + (currentX - 240) + 'px, ' + (currentY - 240) + 'px, 0)';
+      animId = requestAnimationFrame(renderCursorMesh);
     }
-  });
-
-  window.addEventListener('mouseleave', () => {
-    cursorGlow.style.opacity = '0';
-    isMoving = false;
-  });
-
-  function renderCursorMesh() {
-    currentX += (mouseX - currentX) * 0.12;
-    currentY += (mouseY - currentY) * 0.12;
-    cursorGlow.style.left = currentX + 'px';
-    cursorGlow.style.top = currentY + 'px';
-    requestAnimationFrame(renderCursorMesh);
   }
-  requestAnimationFrame(renderCursorMesh);
 
 });
