@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Roast | Cosmética Natural Inspirada en Café y Miel</title>
+  <meta name="description" content="Golden Roast: Productos artesanales de cuidado personal formulados con café tostado y miel pura de abeja.">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Ambient Dynamic Animated Background (Windows 11 Fluent Acrylic & Apple Aura) -->
+  <div class="ambient-backdrop-aura" aria-hidden="true">
+    <div class="aura-blob aura-blob-1"></div>
+    <div class="aura-blob aura-blob-2"></div>
+    <div class="aura-blob aura-blob-3"></div>
+    <div class="aura-blob aura-blob-4"></div>
+    <div class="aura-blob aura-blob-5"></div>
+  </div>
+
+
+  <!-- Brand Preloader -->
+  <div class="site-preloader" id="sitePreloader">
+    <img src="assets/img/logo.png" alt="Golden Roast" class="preloader-drop">
+    <div class="preloader-text">Golden Roast</div>
+    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;" data-i18n="brand.slogan">The Golden touch of nature</div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement">
+    <span class="badge-pill" data-i18n="nav.tag_badge">Golden Roast</span>
+    <span data-i18n="nav.announcement">Envío gratis en Comayagua en compras mayores a L 300 • Cosmética Natural</span>
+  </div>
+
+      <!-- Header (Apple Human Interface × Windows 11 Fluent Acrylic) -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" translate="no">
+        <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+        <div class="brand-text notranslate" translate="no">
+          <span class="brand-name notranslate" translate="no">Golden<span>Roast</span></span>
+          <span class="brand-slogan notranslate" translate="no">The Golden touch of nature</span>
+        </div>
+      </a>
+
+      <!-- Navigation Dock & Off-Canvas Mobile Drawer -->
+      <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-header">
+          <div class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast" class="brand-logo-img" style="width: 36px; height: 36px;">
+            <span class="brand-name notranslate" translate="no" style="font-size: 1.25rem;">Golden<span>Roast</span></span>
+          </div>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation">&times;</button>
+        </div>
+
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="active">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span data-i18n="nav.home">Inicio</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tienda.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span data-i18n="nav.shop">Tienda</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sobre-nosotros.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span data-i18n="nav.about">Sobre Nosotros</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="proyecto.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+              <span data-i18n="nav.project">El Proyecto</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contacto.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span data-i18n="nav.contact">Contacto</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+          <a href="cuenta.html" class="nav-account-btn " style="width: 100%; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-i18n="nav.account">Mi Cuenta</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="cuenta.html" class="nav-account-btn ">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-i18n="nav.account">Mi Cuenta</span>
+        </a>
+
+        <button class="btn-cart-nav" aria-label="Abrir Bolsa de Compras">
+          <svg class="cart-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <span data-i18n="nav.cart">Bolsa</span>
+          <span class="cart-badge">0</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Abrir Menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section con Ambient Glows -->
+    <section class="hero">
+      <div class="ambient-glow-orb hero-glow-1"></div>
+      <div class="ambient-glow-orb hero-glow-2"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span data-i18n="hero.title_pre">El poder renovador del</span> 
+            <em data-i18n="hero.title_coffee">Café</em> 
+            <span data-i18n="hero.title_and">y la suavidad pura de la</span> 
+            <em data-i18n="hero.title_honey">Miel</em>
+          </h1>
+          <p class="hero-desc" data-i18n="hero.desc">
+            Fusión botánica de dos ingredientes extraordinarios en una rutina sinérgica de cuidado facial y corporal: exfoliación mecánica suave seguida de nutrición dérmica profunda.
+          </p>
+          <div class="hero-cta-group">
+            <a href="tienda.html" class="btn btn-primary btn-lg" data-i18n="hero.cta_shop">Descubrir Productos</a>
+            <a href="sobre-nosotros.html" class="btn btn-outline btn-lg" data-i18n="hero.cta_project">Conocer el Proyecto</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">2</span>
+              <span class="stat-label" data-i18n="hero.stat_prototypes">Fórmulas Prototipo</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label" data-i18n="hero.stat_natural">Ingredientes Puros</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">4</span>
+              <span class="stat-label" data-i18n="hero.stat_team">Integrantes Emprendedores</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-stage">
+          <div class="hero-floating-bubble hero-bubble-top">
+            <span style="color: #C59323; font-size: 1.1rem;">★</span>
+            <span data-i18n="hero.pill_artisan">Artisan Craftsmanship</span>
+          </div>
+
+          <div class="hero-interactive-card">
+            <div class="hero-spotlight-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Golden Duo Edition</span>
+            </div>
+
+            <div class="hero-media-wrapper">
+              <picture>
+                <source srcset="assets/img/photo-hero-duo.webp" type="image/webp">
+                <img src="assets/img/photo-hero-duo.jpg" alt="Golden Roast Skincare Duo Set" class="hero-img" width="600" height="420" loading="eager">
+              </picture>
+            </div>
+
+            <div class="hero-interactive-bar">
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">2-Step Synergy</div>
+                <div class="hero-price-tag">L 350.00 <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through; font-weight: 500;">L 380.00</span></div>
+              </div>
+
+              <button class="hero-action-pill" data-add-cart="pack-duo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <span>Add Set</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-floating-bubble hero-bubble-bottom">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span data-i18n="hero.pill_routine">Exfoliation + Hydration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust / Values Bar -->
+    <section class="trust-bar">
+      <div class="container trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="trust-title" data-i18n="trust.ingredients.title">Materias Primas Nobles</h4>
+            <p class="trust-desc" data-i18n="trust.ingredients.desc">Café de altura seleccionado, miel pura de abeja, gel de aloe vera y aceite de coco virgen.</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <div>
+            <h4 class="trust-title" data-i18n="trust.softness.title">Suavidad Inmediata</h4>
+            <p class="trust-desc" data-i18n="trust.softness.desc">Textura granulada calibrada que renueva la piel sin agredir su barrera protectora.</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h4 class="trust-title" data-i18n="trust.synergy.title">Rutina en Dos Pasos</h4>
+            <p class="trust-desc" data-i18n="trust.synergy.desc">Diseñados en secuencia perfecta: primero limpiar y renovar, luego nutrir y sellar.</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="trust-title" data-i18n="trust.origin.title">Origen & Compromiso</h4>
+            <p class="trust-desc" data-i18n="trust.origin.desc">Iniciativa nacida con rigor de formulación, responsabilidad y transparencia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo de Fotografía Real de Ingredientes -->
+    <section class="ingredient-showcase-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-tag">Pureza Botánica</span>
+          <h2 class="section-title">Ingredientes Reales en su Máxima Expresión</h2>
+          <p class="section-subtitle">
+            Cada elemento de nuestras formulaciones es seleccionado por su afinidad dérmica y su nobleza cosmética.
+          </p>
+        </div>
+
+        <div class="ingredient-photo-grid">
+          <!-- 1. Roasted Coffee -->
+          <article class="ingredient-photo-card">
+            <div class="ingredient-img-wrapper">
+              <picture>
+                <source srcset="assets/img/photo-coffee-beans.webp" type="image/webp">
+                <img src="assets/img/photo-coffee-beans.jpg" alt="Roasted Coffee Beans and Natural Grounds" loading="lazy" width="400" height="260">
+              </picture>
+            </div>
+            <div class="ingredient-card-content">
+              <h4 data-i18n="home.ing_coffee_title">Roasted Coffee</h4>
+              <p data-i18n="home.ing_coffee_desc">Natural granulated coffee particles providing gentle mechanical exfoliation to renew texture and stimulate surface microcirculation.</p>
+            </div>
+          </article>
+
+          <!-- 2. Pure Honey -->
+          <article class="ingredient-photo-card">
+            <div class="ingredient-img-wrapper">
+              <picture>
+                <source srcset="assets/img/photo-honey.webp" type="image/webp">
+                <img src="assets/img/photo-honey.jpg" alt="Pure Raw Natural Honey" loading="lazy" width="400" height="260">
+              </picture>
+            </div>
+            <div class="ingredient-card-content">
+              <h4 data-i18n="home.ing_honey_title">Pure Honey</h4>
+              <p data-i18n="home.ing_honey_desc">Potent natural humectant that locks moisture in the epidermis, imparting softness, elasticity, and a healthy golden glow.</p>
+            </div>
+          </article>
+
+          <!-- 3. Aloe Vera Gel -->
+          <article class="ingredient-photo-card">
+            <div class="ingredient-img-wrapper">
+              <picture>
+                <source srcset="assets/img/photo-aloe-vera.webp" type="image/webp">
+                <img src="assets/img/photo-aloe-vera.jpg" alt="Fresh Green Aloe Vera Botanical Leaf" loading="lazy" width="400" height="260">
+              </picture>
+            </div>
+            <div class="ingredient-card-content">
+              <h4 data-i18n="home.ing_aloe_title">Aloe Vera Gel</h4>
+              <p data-i18n="home.ing_aloe_desc">Refreshing botanical soothing phase that conditions tissues, soothes skin, and provides lightweight hydration.</p>
+            </div>
+          </article>
+
+          <!-- 4. Coconut Oil and Glycerin -->
+          <article class="ingredient-photo-card">
+            <div class="ingredient-img-wrapper">
+              <picture>
+                <source srcset="assets/img/photo-cream-texture.webp" type="image/webp">
+                <img src="assets/img/photo-cream-texture.jpg" alt="Virgin Coconut Oil and Plant Glycerin" loading="lazy" width="400" height="260">
+              </picture>
+            </div>
+            <div class="ingredient-card-content">
+              <h4 data-i18n="home.ing_coconut_title">Coconut Oil & Glycerin</h4>
+              <p data-i18n="home.ing_coconut_desc">Plant lipid emollients that seal moisture, restore epidermal barrier integrity, and leave skin velvety soft.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-tag" data-i18n="shop.tag">Exclusive Botanical Collection</span>
+          <h2 class="section-title" data-i18n="shop.title">Natural Personal-Care Formulations</h2>
+          <p class="section-subtitle" data-i18n="shop.subtitle">
+            Artisanal skincare crafted with high-purity coffee grounds, raw honey, and soothing botanical extracts for visibly renewed, radiant skin.
+          </p>
+        </div>
+
+                <div class="products-grid-6">
+
+          <!-- 1. Coffee Exfoliant -->
+          <article class="product-enterprise-card">
+            <span class="product-badge-float" data-i18n="product.step1">Step 1: Renew</span>
+            <div class="product-thumb-container">
+              <picture>
+                <source srcset="assets/img/producto-exfoliante.webp" type="image/webp">
+                <img src="assets/img/producto-exfoliante.jpg" alt="Golden Roast Coffee Exfoliant" loading="lazy" width="400" height="350">
+              </picture>
+            </div>
+            <div class="product-info-box">
+              <span class="product-tagline" data-i18n="prod.scrub.cat">Mechanical Exfoliation</span>
+              <h3 class="product-heading-link"><a href="producto-exfoliante.html" data-i18n="prod.scrub.name">Coffee Exfoliant</a></h3>
+              <p class="product-brief" data-i18n="prod.scrub.summary">
+                Finely ground roasted coffee and organic sugar gently loosen surface dead cells, leaving skin prepped and invigorated.
+              </p>
+              <div class="product-botanical-keys" data-i18n="prod.scrub.ingredients_label">
+                <strong>Key Actives:</strong> Roasted coffee, pure honey, virgin coconut oil, sugar crystals.
+              </div>
+              <div class="product-bottom-row">
+                <div class="product-price-bar">
+                  <span class="product-price-main" data-i18n="prod.scrub.price">L 180.00</span>
+                  <span class="product-price-sub">(approx. $7.50 USD)</span>
+                </div>
+                <div class="product-actions-group">
+                  <a href="producto-exfoliante.html" class="product-btn-secondary" data-i18n="btn.view_details">Detalles</a>
+                  <button class="product-btn-add" data-add-cart="exfoliante">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span data-i18n="btn.add_to_cart">Añadir</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Honey Moisturizer -->
+          <article class="product-enterprise-card">
+            <span class="product-badge-float" data-i18n="product.step2">Step 2: Nourish</span>
+            <div class="product-thumb-container">
+              <picture>
+                <source srcset="assets/img/producto-hidratante.webp" type="image/webp">
+                <img src="assets/img/producto-hidratante.jpg" alt="Golden Roast Honey Moisturizer" loading="lazy" width="400" height="350">
+              </picture>
+            </div>
+            <div class="product-info-box">
+              <span class="product-tagline" data-i18n="prod.cream.cat">Deep Hydration</span>
+              <h3 class="product-heading-link"><a href="producto-hidratante.html" data-i18n="prod.cream.name">Honey Moisturizer</a></h3>
+              <p class="product-brief" data-i18n="prod.cream.summary">
+                Deep humectant formula combining pure raw honey, soothing aloe vera gel, and plant glycerin for a silky, non-greasy finish.
+              </p>
+              <div class="product-botanical-keys" data-i18n="prod.cream.ingredients_label">
+                <strong>Key Actives:</strong> Pure honey (2 tbsp), aloe vera (4 tbsp), plant glycerin & coconut.
+              </div>
+              <div class="product-bottom-row">
+                <div class="product-price-bar">
+                  <span class="product-price-main" data-i18n="prod.cream.price">L 200.00</span>
+                  <span class="product-price-sub">(approx. $8.50 USD)</span>
+                </div>
+                <div class="product-actions-group">
+                  <a href="producto-hidratante.html" class="product-btn-secondary" data-i18n="btn.view_details">Detalles</a>
+                  <button class="product-btn-add" data-add-cart="hidratante">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span data-i18n="btn.add_to_cart">Añadir</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Golden Duo Set -->
+          <article class="product-enterprise-card" style="border: 2px solid var(--gold-primary);">
+            <span class="product-badge-float" style="background: var(--gold-gradient); color: #1A1009;" data-i18n="product.recommended">⭐ Best Value Routine</span>
+            <div class="product-thumb-container">
+              <picture>
+                <source srcset="assets/img/producto-pack.webp" type="image/webp">
+                <img src="assets/img/producto-pack.jpg" alt="Golden Duo Complete Routine" loading="lazy" width="400" height="350">
+              </picture>
+            </div>
+            <div class="product-info-box">
+              <span class="product-tagline" data-i18n="prod.bundle.cat">2-Step Synergy</span>
+              <h3 class="product-heading-link"><a href="sobre-nosotros.html#rutina" data-i18n="prod.bundle.name">Golden Duo Routine Set</a></h3>
+              <p class="product-brief" data-i18n="prod.bundle.summary">
+                The signature Golden Roast ritual: Coffee Exfoliant (200g) + Honey Moisturizer (150ml). Save L 30.00 with this bundle.
+              </p>
+              <div class="product-botanical-keys" data-i18n="prod.bundle.ingredients_label">
+                <strong>Special Benefit:</strong> Complete synergy of mechanical renewal followed by cellular sealing.
+              </div>
+              <div class="product-bottom-row">
+                <div class="product-price-bar">
+                  <div>
+                    <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through; margin-right: 0.4rem;" data-i18n="prod.bundle.original_price">L 380.00</span>
+                    <span class="product-price-main" style="color: var(--gold-hover);" data-i18n="prod.bundle.price">L 350.00</span>
+                  </div>
+                  <span class="product-price-sub">(Save L 30.00)</span>
+                </div>
+                <div class="product-actions-group">
+                  <a href="sobre-nosotros.html#rutina" class="product-btn-secondary" data-i18n="btn.view_details">Detalles</a>
+                  <button class="product-btn-add" data-add-cart="pack-duo">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span data-i18n="btn.add_bundle">Añadir Set</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Glow Botanical Elixir -->
+          <article class="product-enterprise-card">
+            <span class="product-badge-float">Antioxidant Serum</span>
+            <div class="product-thumb-container">
+              <picture>
+                <source srcset="assets/img/producto-elixir.webp" type="image/webp">
+                <img src="assets/img/producto-elixir.jpg" alt="Glow Botanical Elixir" loading="lazy" width="400" height="350">
+              </picture>
+            </div>
+            <div class="product-info-box">
+              <span class="product-tagline">Intensive Treatment</span>
+              <h3 class="product-heading-link"><a href="producto-hidratante.html">Glow Botanical Elixir</a></h3>
+              <p class="product-brief">
+                Concentrated antioxidant oil drops infused with cold-pressed green coffee bean extract and royal honey essence for deep radiance.
+              </p>
+              <div class="product-botanical-keys">
+                <strong>Key Actives:</strong> Green coffee oil, golden royal honey, vitamin E, squalane.
+              </div>
+              <div class="product-bottom-row">
+                <div class="product-price-bar">
+                  <span class="product-price-main">L 240.00</span>
+                  <span class="product-price-sub">(approx. $10.00 USD)</span>
+                </div>
+                <div class="product-actions-group">
+                  <a href="producto-hidratante.html" class="product-btn-secondary" data-i18n="btn.view_details">Detalles</a>
+                  <button class="product-btn-add" data-add-cart="elixir">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span>Añadir</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Travel & Gift Collection -->
+          <article class="product-enterprise-card">
+            <span class="product-badge-float">Limited Edition</span>
+            <div class="product-thumb-container">
+              <picture>
+                <source srcset="assets/img/producto-travel-kit.webp" type="image/webp">
+                <img src="assets/img/producto-travel-kit.jpg" alt="Travel and Gift Collection" loading="lazy" width="400" height="350">
+              </picture>
+            </div>
+            <div class="product-info-box">
+              <span class="product-tagline">Gift Sets & Travel</span>
+              <h3 class="product-heading-link"><a href="sobre-nosotros.html#rutina">Travel & Gift Box Set</a></h3>
+              <p class="product-brief">
+                Miniature luxury travel jars of coffee scrub and honey cream with an artisanal wooden spoon inside an embossed presentation box.
+              </p>
+              <div class="product-botanical-keys">
+                <strong>Includes:</strong> 60g Coffee Scrub, 50ml Honey Cream, wooden applicator.
+              </div>
+              <div class="product-bottom-row">
+                <div class="product-price-bar">
+                  <span class="product-price-main">L 260.00</span>
+                  <span class="product-price-sub">(approx. $11.00 USD)</span>
+                </div>
+                <div class="product-actions-group">
+                  <a href="sobre-nosotros.html#rutina" class="product-btn-secondary" data-i18n="btn.view_details">Detalles</a>
+                  <button class="product-btn-add" data-add-cart="travel-kit">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span>Añadir</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Gentle Coffee Cleansing Gel -->
+          <article class="product-enterprise-card">
+            <span class="product-badge-float">Daily Cleanse</span>
+            <div class="product-thumb-container">
+              <picture>
+                <source srcset="assets/img/producto-cleanser.webp" type="image/webp">
+                <img src="assets/img/producto-cleanser.jpg" alt="Gentle Coffee Cleansing Gel" loading="lazy" width="400" height="350">
+              </picture>
+            </div>
+            <div class="product-info-box">
+              <span class="product-tagline">Purifying Wash</span>
+              <h3 class="product-heading-link"><a href="producto-exfoliante.html">Coffee Cleansing Gel</a></h3>
+              <p class="product-brief">
+                Sulfate-free pH-balanced foaming facial cleanser infused with coffee antioxidant extract to purify pores without dryness.
+              </p>
+              <div class="product-botanical-keys">
+                <strong>Key Actives:</strong> Coffee bean infusion, aloe vera extract, coconut surfactants.
+              </div>
+              <div class="product-bottom-row">
+                <div class="product-price-bar">
+                  <span class="product-price-main">L 190.00</span>
+                  <span class="product-price-sub">(approx. $8.00 USD)</span>
+                </div>
+                <div class="product-actions-group">
+                  <a href="producto-exfoliante.html" class="product-btn-secondary" data-i18n="btn.view_details">Detalles</a>
+                  <button class="product-btn-add" data-add-cart="cleanser">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span>Añadir</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Routine in 2 Steps -->
+    <section class="routine-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-tag" data-i18n="routine.tag">Sinergia Botánica</span>
+          <h2 class="section-title" data-i18n="routine.title">¿Cómo Funciona la Rutina Golden Roast?</h2>
+          <p class="section-subtitle" data-i18n="routine.subtitle">
+            El cuidado eficaz de la piel no requiere complejidad innecesaria. Nuestra propuesta se fundamenta en dos pasos armónicos.
+          </p>
+        </div>
+
+        <div class="routine-steps-grid">
+          <div class="step-card">
+            <div class="step-num-badge" data-i18n="routine.step1.num">1</div>
+            <span class="badge badge-coffee" style="margin-bottom: 0.5rem;" data-i18n="routine.step1.badge">Paso 1: Exfoliación & Renovación</span>
+            <h3 class="step-title" data-i18n="routine.step1.title">Renueva con Partículas de Café</h3>
+            <p class="step-desc" data-i18n="routine.step1.desc">
+              Aplica el exfoliante sobre la piel húmeda con suaves movimientos circulares. Las partículas de café y azúcar remueven las células muertas superficiales mediante acción mecánica.
+            </p>
+            <ul class="step-points">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="routine.step1.p1">Fricción controlada que estimula la microcirculación superficial cutánea.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="routine.step1.p2">El aceite de coco y la miel pura suavizan y previenen la resequedad posterior.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num-badge" data-i18n="routine.step2.num">2</div>
+            <span class="badge badge-gold" style="margin-bottom: 0.5rem;" data-i18n="routine.step2.badge">Paso 2: Hidratación & Sellado</span>
+            <h3 class="step-title" data-i18n="routine.step2.title">Nutre con Miel y Aloe Vera</h3>
+            <p class="step-desc" data-i18n="routine.step2.desc">
+              Con la piel limpia y receptiva tras la exfoliación, aplica la crema hidratante. La miel de abeja pura y la glicerina vegetal atraen agua mientras el aloe vera calma y refresca.
+            </p>
+            <ul class="step-points">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="routine.step2.p1">Retención sostenida del agua en las capas superficiales de la piel.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="routine.step2.p2">Tacto aterciopelado y suave sin dejar sensación grasosa o pegajosa.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-tag" data-i18n="value.tag">Nuestros Fundamentos</span>
+          <h2 class="section-title" data-i18n="value.title">Los Cuatro Pilares de Golden Roast</h2>
+          <p class="section-subtitle" data-i18n="value.subtitle">
+            Una propuesta construida con dedicación estética, rigor de formulación y visión emprendedora.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+            </div>
+            <h4 data-i18n="value.p1.title">Identidad de Marca</h4>
+            <p data-i18n="value.p1.desc">Nombre y logotipo inspirados en los tonos dorados de la miel y tostados del café, transmitiendo calidez, honestidad y bienestar.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <h4 data-i18n="value.p2.title">Productos Complementarios</h4>
+            <p data-i18n="value.p2.desc">Dos formulaciones ideadas para trabajar en conjunto: la exfoliación previa deja la piel receptiva para absorber la hidratación.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              </svg>
+            </div>
+            <h4 data-i18n="value.p3.title">Presentación Cuidada</h4>
+            <p data-i18n="value.p3.desc">Envases de vidrio ámbar y etiquetas con diseño armónico que reflejan el valor artesanal del producto.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h4 data-i18n="value.p4.title">Espíritu Emprendedor</h4>
+            <p data-i18n="value.p4.desc">Una plataforma de aprendizaje práctico para explorar formulaciones seguras, diseño de packaging y potencial comercial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- Footer (Enterprise Luxury Dark Acrylic & Social Hub) -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 1. Brand & Socials -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+            <div class="brand-text notranslate" translate="no">
+              <span class="brand-name notranslate" translate="no" style="color: #FFFFFF;">Golden<span style="color: var(--gold-pale);">Roast</span></span>
+              <span class="brand-slogan notranslate" translate="no" style="color: #FFE699;" data-i18n="brand.slogan">The Golden touch of nature</span>
+            </div>
+          </a>
+          <p data-i18n="footer.brand_desc">
+            Cosmética botánica artesanal inspirada en café tostado y miel pura de abeja. Iniciativa universitaria desarrollada en el Centro Regional UNAH-CURC en Comayagua.
+          </p>
+
+          <!-- Social Media Icons (Instagram, Facebook, TikTok, WhatsApp) -->
+          
+          <div class="footer-social-bar">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram de Golden Roast" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook de Golden Roast" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="TikTok de Golden Roast" title="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
+            </a>
+            <a href="https://wa.me/50499999999" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp de Atención Golden Roast" title="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.175.2-.351.226-.652.076-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.175-.3-.019-.463.132-.613.136-.134.301-.351.451-.527.151-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.631-.927-2.233-.244-.587-.492-.507-.676-.516l-.577-.01c-.2 0-.527.075-.802.376s-1.053 1.028-1.053 2.508 1.078 2.909 1.229 3.109c.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.175-1.43-.075-.125-.276-.2-.577-.35zm-5.42 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.866 11.866 0 0 0 5.713 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Navigation -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.nav_title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+            <li><a href="tienda.html" data-i18n="nav.shop">Tienda</a></li>
+            <li><a href="sobre-nosotros.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+            <li><a href="proyecto.html" data-i18n="nav.project">El Proyecto</a></li>
+            <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Collection -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.products_title">Colección</h4>
+          <ul class="footer-links">
+            <li><a href="producto-exfoliante.html" data-i18n="prod.scrub.name">Exfoliante de Café</a></li>
+            <li><a href="producto-hidratante.html" data-i18n="prod.cream.name">Crema Hidratante de Miel</a></li>
+            <li><a href="tienda.html" data-i18n="prod.bundle.name">Pack Golden Dúo</a></li>
+            <li><a href="tienda.html">Glow Botanical Elixir</a></li>
+            <li><a href="carrito.html" data-i18n="nav.cart">Bolsa de Compras</a></li>
+            <li><a href="cuenta.html" data-i18n="nav.account">Mi Cuenta</a></li>
+          </ul>
+        </div>
+
+        <!-- 4. Contact & Newsletter -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.contact_title">Contacto & Envíos</h4>
+          <p style="font-size: 0.875rem; margin-bottom: 0.6rem; color: #D1C5BD;">
+            Comayagua, Honduras (UNAH-CURC).
+          </p>
+          <p style="font-size: 0.85rem; margin-bottom: 1.25rem; color: #A89B92; line-height: 1.5;">
+            <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
+          </p>
+          <form id="newsletterForm" class="footer-newsletter-box">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar with Integrated Language Selector -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Golden Roast. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="politicas.html" data-i18n="footer.shipping_policy">Políticas y Envíos</a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="politicas.html#privacidad" data-i18n="footer.privacy">Aviso Legal</a>
+        </div>
+        <div class="footer-lang-container" id="footerLangMount">
+          <!-- Language switcher mounts cleanly here -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

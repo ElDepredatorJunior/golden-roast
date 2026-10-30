@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Pedido | Golden Roast - Cosmética Botánica</title>
+  <meta name="description" content="Completa los datos de contacto y entrega en Comayagua para registrar tu orden de Golden Roast.">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .checkout-page-section { padding: 3.5rem 0 5rem; }
+    .checkout-layout { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 2.5rem; align-items: start; }
+    .form-card, .summary-card { background: #FFFFFF; border-radius: var(--radius-lg); padding: 2.25rem; border: 1px solid var(--surface-border); box-shadow: var(--shadow-sm); }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-label { display: block; font-size: 0.885rem; font-weight: 600; color: var(--coffee-deep); margin-bottom: 0.35rem; }
+    .radio-card { border: 1px solid var(--surface-border); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin-bottom: 0.75rem; cursor: pointer; display: flex; align-items: flex-start; gap: 0.85rem; transition: var(--transition-fast); }
+    .radio-card:hover, .radio-card.active { border-color: var(--gold-primary); background: #FAF5ED; }
+    .checkout-items-list { margin-bottom: 1.5rem; max-height: 240px; overflow-y: auto; padding-right: 0.5rem; }
+    .checkout-item-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--surface-border); font-size: 0.9rem; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 1.5rem; }
+    .modal-box { background: #FFFFFF; border-radius: var(--radius-lg); max-width: 540px; width: 100%; padding: 2.5rem; text-align: center; box-shadow: var(--shadow-lg); }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Dynamic Animated Background (Windows 11 Fluent Acrylic & Apple Aura) -->
+  <div class="ambient-backdrop-aura" aria-hidden="true">
+    <div class="aura-blob aura-blob-1"></div>
+    <div class="aura-blob aura-blob-2"></div>
+    <div class="aura-blob aura-blob-3"></div>
+    <div class="aura-blob aura-blob-4"></div>
+    <div class="aura-blob aura-blob-5"></div>
+  </div>
+
+
+  <!-- Brand Preloader -->
+  <div class="site-preloader" id="sitePreloader">
+    <img src="assets/img/logo.png" alt="Golden Roast" class="preloader-drop">
+    <div class="preloader-text">Golden Roast</div>
+    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;" data-i18n="brand.slogan">The Golden touch of nature</div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement">
+    <span class="badge-pill" data-i18n="nav.tag_badge">Golden Roast</span>
+    <span data-i18n="nav.announcement">Envío gratis en Comayagua en compras mayores a L 300 · Cosmética Natural</span>
+  </div>
+
+      <!-- Header (Apple Human Interface × Windows 11 Fluent Acrylic) -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" translate="no">
+        <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+        <div class="brand-text notranslate" translate="no">
+          <span class="brand-name notranslate" translate="no">Golden<span>Roast</span></span>
+          <span class="brand-slogan notranslate" translate="no">The Golden touch of nature</span>
+        </div>
+      </a>
+
+      <!-- Navigation Dock & Off-Canvas Mobile Drawer -->
+      <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-header">
+          <div class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast" class="brand-logo-img" style="width: 36px; height: 36px;">
+            <span class="brand-name notranslate" translate="no" style="font-size: 1.25rem;">Golden<span>Roast</span></span>
+          </div>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation">&times;</button>
+        </div>
+
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span data-i18n="nav.home">Inicio</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tienda.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span data-i18n="nav.shop">Tienda</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sobre-nosotros.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span data-i18n="nav.about">Sobre Nosotros</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="proyecto.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+              <span data-i18n="nav.project">El Proyecto</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contacto.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span data-i18n="nav.contact">Contacto</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+          <a href="cuenta.html" class="nav-account-btn " style="width: 100%; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-i18n="nav.account">Mi Cuenta</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="cuenta.html" class="nav-account-btn ">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-i18n="nav.account">Mi Cuenta</span>
+        </a>
+
+        <button class="btn-cart-nav" aria-label="Abrir Bolsa de Compras">
+          <svg class="cart-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <span data-i18n="nav.cart">Bolsa</span>
+          <span class="cart-badge">0</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Abrir Menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <main class="checkout-page-section">
+    <div class="container">
+      <!-- Amazon 3-Step Progress Stepper -->
+      <div class="checkout-stepper">
+        <div class="checkout-step-node completed" id="stepNode1">
+          <span class="step-circle">✓</span>
+          <span>1. Dirección de Entrega</span>
+        </div>
+        <div class="step-divider active"></div>
+        <div class="checkout-step-node active" id="stepNode2">
+          <span class="step-circle">2</span>
+          <span>2. Pasarela POS & Pago</span>
+        </div>
+        <div class="step-divider active"></div>
+        <div class="checkout-step-node" id="stepNode3">
+          <span class="step-circle">3</span>
+          <span>3. Confirmación</span>
+        </div>
+      </div>
+
+      <div class="checkout-layout">
+        <!-- Left Column: Address & POS Payment Gateway -->
+        <div class="checkout-main-col">
+          <form id="checkoutForm">
+            <!-- 1. Address Section (Amazon Style) -->
+            <div class="checkout-form-card" style="margin-bottom: 2rem;">
+              <div class="checkout-section-header">
+                <div class="section-icon-badge">📍</div>
+                <div>
+                  <h2 class="checkout-section-title">1. Dirección y Datos de Entrega</h2>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Indica dónde y a quién debemos entregar tu paquete botánico en Comayagua.</p>
+                </div>
+              </div>
+
+              <!-- Address Type Selector -->
+              <div class="address-type-selector">
+                <button type="button" class="address-type-pill active" data-addr-type="home">
+                  <span>🏠</span> Domicilio Particular
+                </button>
+                <button type="button" class="address-type-pill" data-addr-type="campus">
+                  <span>🎓</span> Campus UNAH-CURC / UPH
+                </button>
+                <button type="button" class="address-type-pill" data-addr-type="work">
+                  <span>💼</span> Oficina o Comercio
+                </button>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="custName">Nombre Completo del Destinatario *</label>
+                  <input type="text" id="custName" class="form-control" required placeholder="Ej. Carlos Martínez">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="custPhone">Teléfono / WhatsApp de Contacto *</label>
+                  <input type="tel" id="custPhone" class="form-control" required placeholder="+504 9876-5432">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="custEmail">Correo Electrónico (para Recibo Digital) *</label>
+                  <input type="email" id="custEmail" class="form-control" required placeholder="correo@ejemplo.hn">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="custLocation">Punto de Entrega Principal en Comayagua *</label>
+                  <select id="custLocation" class="form-control" required>
+                    <option value="">Selecciona una zona de entrega...</option>
+                    <option value="Campus UNAH-CURC (Centro Regional Universitario)">Campus UNAH-CURC (Centro Regional Universitario)</option>
+                    <option value="Campus Universidad Politécnica (UPH Comayagua)">Campus UPH - Comayagua</option>
+                    <option value="Comayagua Centro (Plaza Central / Catedral)">Comayagua Centro (Plaza Central / Catedral)</option>
+                    <option value="Mall Premier Comayagua">Mall Premier Comayagua (Entrada Principal)</option>
+                    <option value="Boulevard Roberto Romero Larios">Boulevard Roberto Romero Larios</option>
+                    <option value="Entrega a Domicilio Particular en Comayagua">Entrega a Domicilio Particular en Comayagua</option>
+                    <option value="Envío Nacional Coordinado (Honduras)">Envío Nacional Coordinado (Honduras)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="custAddress">Dirección Exacta / Colonia / Referencia *</label>
+                <input type="text" id="custAddress" class="form-control" required placeholder="Ej. Barrio El Centro, frente a Farmacia Simán, casa color terracota #24">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="custNotes">Instrucciones Especiales de Entrega (Opcional)</label>
+                <textarea id="custNotes" class="form-control" rows="2" placeholder="Ej. Entregar en horario de 1:00 PM a 4:00 PM o dejar con recepción"></textarea>
+              </div>
+            </div>
+
+            <!-- 2. Amazon POS & Payment Gateway Section -->
+            <div class="checkout-form-card">
+              <div class="checkout-section-header">
+                <div class="section-icon-badge">💳</div>
+                <div>
+                  <h2 class="checkout-section-title">2. Pasarela de Pago & POS Seguro</h2>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Selecciona tu método de pago preferido con cifrado bancario de 256 bits.</p>
+                </div>
+              </div>
+
+              <!-- Payment Method Tabs -->
+              <div class="payment-tabs">
+                <div class="payment-tab-btn active" data-pay-tab="card">
+                  <span class="payment-tab-icon">💳</span>
+                  <span class="payment-tab-title">Tarjeta Crédito / Débito</span>
+                  <span class="payment-tab-desc">Visa, Mastercard, AMEX</span>
+                </div>
+                <div class="payment-tab-btn" data-pay-tab="transfer">
+                  <span class="payment-tab-icon">🏦</span>
+                  <span class="payment-tab-title">Transferencia Local</span>
+                  <span class="payment-tab-desc">Ficohsa, Atlántida, BAC</span>
+                </div>
+                <div class="payment-tab-btn" data-pay-tab="cash">
+                  <span class="payment-tab-icon">💵</span>
+                  <span class="payment-tab-title">Contra Entrega</span>
+                  <span class="payment-tab-desc">Efectivo o POS Móvil</span>
+                </div>
+              </div>
+
+              <input type="hidden" name="payMethod" id="selectedPayMethod" value="card">
+
+              <!-- Pane 1: Virtual Card & Gateway -->
+              <div id="paneCard" class="payment-pane active">
+                <!-- 3D Interactive Virtual Card Preview -->
+                <div class="virtual-card-perspective">
+                  <div class="virtual-card" id="virtualCard">
+                    <!-- Front -->
+                    <div class="virtual-card-front">
+                      <div class="card-top-row">
+                        <div class="card-chip"></div>
+                        <div class="card-brand-network" id="cardBrandLogo">VISA</div>
+                      </div>
+                      <div class="card-number-display" id="cardDisplayNum">•••• •••• •••• ••••</div>
+                      <div class="card-bottom-row">
+                        <div>
+                          <div class="card-holder-label">TITULAR DE LA TARJETA</div>
+                          <div class="card-holder-name" id="cardDisplayName">TU NOMBRE</div>
+                        </div>
+                        <div style="text-align: right;">
+                          <div class="card-holder-label">VENCE</div>
+                          <div class="card-exp-date" id="cardDisplayExp">MM/AA</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Back (flips on CVV focus) -->
+                    <div class="virtual-card-back">
+                      <div class="card-mag-strip"></div>
+                      <div class="card-cvv-band">
+                        <span id="cardDisplayCvv">•••</span>
+                      </div>
+                      <div style="padding: 0 1.5rem; font-size: 0.65rem; color: #D1C5BD; text-align: center; margin-top: 0.75rem;">
+                        Golden Roast Artisan Skincare • Pasarela Criptográfica Segura
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="cardNumInput">Número de Tarjeta *</label>
+                    <input type="text" id="cardNumInput" class="form-control" maxlength="19" placeholder="4000 1234 5678 9010" inputmode="numeric">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cardNameInput">Nombre en la Tarjeta *</label>
+                    <input type="text" id="cardNameInput" class="form-control" placeholder="Como figura en el plástico">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="cardExpInput">Vencimiento (MM/AA) *</label>
+                    <input type="text" id="cardExpInput" class="form-control" maxlength="5" placeholder="12/28" inputmode="numeric">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cardCvvInput">Código de Seguridad (CVV/CVC) *</label>
+                    <input type="password" id="cardCvvInput" class="form-control" maxlength="4" placeholder="123" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: #0E9F6E; background: #DEF7EC; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #BCF0DA;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>Conexión protegida con tokenización PCI-DSS y cifrado bancario SHA-256.</span>
+                </div>
+              </div>
+
+              <!-- Pane 2: Bank Transfer Hub -->
+              <div id="paneTransfer" class="payment-pane" style="display: none;">
+                <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                  Realiza la transferencia desde la app de tu banco favorito en Honduras. Copia el número de cuenta con un clic:
+                </p>
+                <div class="bank-cards-grid">
+                  <div class="bank-info-card">
+                    <div class="bank-header-row">
+                      <span class="bank-name">🔵 Banco Ficohsa</span>
+                      <button type="button" class="btn-copy-account" data-copy="200010928491">Copiar</button>
+                    </div>
+                    <div class="bank-account-num">2000-1092-8491</div>
+                    <div class="bank-holder">Cuenta Monetaria · Golden Roast UNAH</div>
+                  </div>
+
+                  <div class="bank-info-card">
+                    <div class="bank-header-row">
+                      <span class="bank-name">🔴 Banco Atlántida</span>
+                      <button type="button" class="btn-copy-account" data-copy="110034982910">Copiar</button>
+                    </div>
+                    <div class="bank-account-num">1100-3498-2910</div>
+                    <div class="bank-holder">Cuenta de Cheques · Emprendimiento Curc</div>
+                  </div>
+
+                  <div class="bank-info-card">
+                    <div class="bank-header-row">
+                      <span class="bank-name">🟡 BAC Credomatic</span>
+                      <button type="button" class="btn-copy-account" data-copy="740291824410">Copiar</button>
+                    </div>
+                    <div class="bank-account-num">7402-9182-4410</div>
+                    <div class="bank-holder">Cuenta de Ahorros · Cosmética Natural</div>
+                  </div>
+
+                  <div class="bank-info-card">
+                    <div class="bank-header-row">
+                      <span class="bank-name">🟢 Banpaís</span>
+                      <button type="button" class="btn-copy-account" data-copy="014020019283">Copiar</button>
+                    </div>
+                    <div class="bank-account-num">0140-2001-9283</div>
+                    <div class="bank-holder">Cuenta de Ahorros · Proyecto Golden Roast</div>
+                  </div>
+                </div>
+
+                <div style="margin-top: 1.25rem; font-size: 0.825rem; color: var(--text-muted); line-height: 1.5; background: rgba(197, 147, 35, 0.08); padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid rgba(197, 147, 35, 0.2);">
+                  📲 Al registrar tu pedido recibirás el enlace directo a WhatsApp para compartir tu comprobante de depósito y agilizar la entrega inmediata.
+                </div>
+              </div>
+
+              <!-- Pane 3: Cash & Mobile POS Terminal -->
+              <div id="paneCash" class="payment-pane" style="display: none;">
+                <div style="background: rgba(197, 147, 35, 0.08); border: 1.5px solid rgba(197, 147, 35, 0.25); border-radius: 18px; padding: 1.5rem; text-align: center;">
+                  <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">💵 📲</div>
+                  <h4 style="font-size: 1.15rem; color: var(--coffee-deep); margin-bottom: 0.5rem; font-weight: 700;">Pago Contra Entrega en Comayagua</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; max-width: 480px; margin: 0 auto 1rem;">
+                    Paga en efectivo al momento de recibir tus cosméticos o solicita a nuestro repartidor el <strong>POS Móvil inalámbrico</strong> para cancelar con tu tarjeta física de débito o crédito en el punto de encuentro acordado.
+                  </p>
+                  <span class="badge badge-gold" style="font-size: 0.8rem; padding: 0.4rem 0.9rem;">✓ Sin cargos adicionales por servicio de POS en Comayagua</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column: Amazon Sticky Summary Rail -->
+        <aside class="checkout-summary-col">
+          <div class="checkout-summary-card">
+            <!-- Free Shipping Progress -->
+            <div class="summary-free-ship-bar">
+              <div class="free-ship-info">
+                <span id="freeShipStatusText">Envío gratis en Comayagua</span>
+                <span id="freeShipGoalText" style="color: var(--gold-dark);">L 300.00</span>
+              </div>
+              <div class="free-ship-progress">
+                <div class="free-ship-progress-fill" id="freeShipFill" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <h3 style="font-family: var(--font-heading); color: var(--coffee-deep); font-size: 1.25rem; margin-bottom: 1rem; font-weight: 700;">
+              Resumen del Pedido
+            </h3>
+
+            <!-- Mini Items List -->
+            <div class="checkout-items-mini-list" id="checkoutMiniList"></div>
+
+            <!-- Coupon Input -->
+            <div class="summary-coupon-box">
+              <input type="text" id="couponCodeInput" placeholder="Código: GOLDEN10">
+              <button type="button" id="btnApplyCouponCode">Aplicar</button>
+            </div>
+            <div id="couponFeedbackMsg" style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.85rem; display: none;"></div>
+
+            <!-- Financial Breakdown -->
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.65rem; font-size: 0.9rem; color: var(--text-muted);">
+              <span>Subtotal:</span>
+              <span id="chkSubtotal" style="font-weight: 700; color: var(--coffee-deep);">L 0.00</span>
+            </div>
+
+            <div id="chkDiscountRow" style="display: none; justify-content: space-between; margin-bottom: 0.65rem; font-size: 0.9rem; color: #15803d;">
+              <span>Descuento Aplicado (10%):</span>
+              <span id="chkDiscount" style="font-weight: 700;">-L 0.00</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+              <span>Entrega en Comayagua:</span>
+              <span id="chkDelivery" style="font-weight: 700; color: var(--coffee-deep);">L 40.00</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem; border-top: 1.5px solid rgba(0,0,0,0.08); margin-bottom: 0.5rem;">
+              <span style="font-size: 1.2rem; font-weight: 800; color: var(--coffee-deep);">Total del Pedido:</span>
+              <div style="text-align: right;">
+                <div id="chkTotal" style="font-size: 1.45rem; font-weight: 800; color: var(--coffee-deep); line-height: 1;">L 0.00</div>
+                <div id="chkTotalUsd" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">(aprox. $0.00 USD)</div>
+              </div>
+            </div>
+
+            <!-- Amazon Style Pay Button -->
+            <button type="button" class="btn-amazon-pay" id="btnPlaceOrderAmazon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span id="btnPayText">Pagar y Realizar Pedido</span>
+            </button>
+
+            <!-- Trust Badges -->
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.06); font-size: 0.775rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: #0E9F6E; font-size: 1rem;">🛡️</span>
+                <span>Transacción segura y encriptada (PCI-DSS & SSL)</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--gold-dark); font-size: 1rem;">📦</span>
+                <span>Empaque premium en vidrio ámbar con garantía artesanal</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--gold-primary); font-size: 1rem;">🎓</span>
+                <span>Iniciativa Emprendedora UNAH-CURC Comayagua</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Amazon-style POS Processing Overlay -->
+  <div class="pos-processing-overlay" id="posProcessingOverlay">
+    <div class="pos-processing-card">
+      <div class="pos-spinner-ring"></div>
+      <h3 class="pos-processing-msg" id="posProcessingMsg">Procesando Pago Seguro...</h3>
+      <p class="pos-processing-sub" id="posProcessingSub">Conectando con la pasarela bancaria autorizada...</p>
+    </div>
+  </div>
+
+    <!-- Amazon Order Confirmed Receipt Modal -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-box">
+      <!-- Animated Success Checkmark Badge -->
+      <div class="success-check-badge">
+        <div class="success-pulse-ring"></div>
+        <div class="success-check-circle">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <span class="badge badge-gold" style="font-size: 0.8rem; padding: 0.35rem 0.95rem; margin-bottom: 0.75rem; display: inline-block;">
+        Transacción Bancaria Aprobada ✓
+      </span>
+      <h2 style="font-family: var(--font-heading); color: var(--coffee-deep); font-size: 1.85rem; margin-bottom: 0.35rem; line-height: 1.2;">
+        ¡Gracias por tu Pedido!
+      </h2>
+      <p style="color: var(--text-muted); font-size: 0.925rem; line-height: 1.5; margin-bottom: 1.35rem; max-width: 440px; margin-left: auto; margin-right: auto;">
+        Tu orden ha sido registrada exitosamente en la plataforma de <strong>Golden Roast</strong>.
+      </p>
+
+      <!-- Amazon Live Delivery Tracker -->
+      <div class="amazon-package-tracker">
+        <div class="tracker-step completed">
+          <span class="tracker-dot">✓</span>
+          <span class="tracker-text">Confirmado</span>
+        </div>
+        <div class="tracker-line active"></div>
+        <div class="tracker-step active">
+          <span class="tracker-dot">🌿</span>
+          <span class="tracker-text">En Preparación</span>
+        </div>
+        <div class="tracker-line"></div>
+        <div class="tracker-step">
+          <span class="tracker-dot">🚚</span>
+          <span class="tracker-text">Por Entregar</span>
+        </div>
+      </div>
+
+      <!-- Itemized Receipt Box -->
+      <div class="receipt-card-box">
+        <div class="receipt-row" style="border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="receipt-label">Número de Pedido:</span>
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <strong id="modalOrderNumber" style="color: var(--gold-dark); font-family: monospace; font-size: 1.05rem;">#GR-000000</strong>
+            <button type="button" id="btnCopyModalOrder" class="btn-copy-account" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Copiar</button>
+          </div>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Destinatario:</span>
+          <span class="receipt-val" id="modalOrderCustomer"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Punto de Entrega:</span>
+          <span class="receipt-val" id="modalOrderLocation" style="max-width: 270px;"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Método de Pago:</span>
+          <span class="receipt-val" id="modalOrderPayMethod"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Entrega Estimada:</span>
+          <span class="receipt-val" style="color: #0E9F6E; font-weight: 700;">Mañana, entre 10:00 AM y 4:00 PM</span>
+        </div>
+
+        <!-- Purchased Items Summary Inside Receipt -->
+        <div class="receipt-items-container" id="modalOrderItems"></div>
+
+        <div class="receipt-total-row">
+          <span>Total Pagado:</span>
+          <span id="modalOrderTotal" style="color: var(--coffee-deep); font-weight: 800;">L 0.00</span>
+        </div>
+      </div>
+
+      <!-- Action Button Stack (Clear, Elegant, No Overflow) -->
+      <div class="modal-actions-stack">
+        <a id="btnModalWhatsapp" href="#" target="_blank" class="btn-modal-primary-wa">
+          <span>📲 Coordinar Entrega por WhatsApp</span>
+        </a>
+        <div class="modal-secondary-grid">
+          <button type="button" class="btn-modal-secondary" onclick="window.print()">
+            <span>🖨️ Imprimir Recibo</span>
+          </button>
+          <a href="cuenta.html" class="btn-modal-secondary">
+            <span>👤 Ver en Mi Cuenta</span>
+          </a>
+        </div>
+        <div>
+          <a href="tienda.html" class="modal-link-back">
+            <span>← Seguir Comprando en la Tienda</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer (Enterprise Luxury Dark Acrylic & Social Hub) -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 1. Brand & Socials -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+            <div class="brand-text notranslate" translate="no">
+              <span class="brand-name notranslate" translate="no" style="color: #FFFFFF;">Golden<span style="color: var(--gold-pale);">Roast</span></span>
+              <span class="brand-slogan notranslate" translate="no" style="color: #FFE699;" data-i18n="brand.slogan">The Golden touch of nature</span>
+            </div>
+          </a>
+          <p data-i18n="footer.brand_desc">
+            Cosmética botánica artesanal inspirada en café tostado y miel pura de abeja. Iniciativa universitaria desarrollada en el Centro Regional UNAH-CURC en Comayagua.
+          </p>
+
+          <!-- Social Media Icons (Instagram, Facebook, TikTok, WhatsApp) -->
+          
+          <div class="footer-social-bar">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram de Golden Roast" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook de Golden Roast" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="TikTok de Golden Roast" title="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
+            </a>
+            <a href="https://wa.me/50499999999" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp de Atención Golden Roast" title="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.175.2-.351.226-.652.076-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.175-.3-.019-.463.132-.613.136-.134.301-.351.451-.527.151-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.631-.927-2.233-.244-.587-.492-.507-.676-.516l-.577-.01c-.2 0-.527.075-.802.376s-1.053 1.028-1.053 2.508 1.078 2.909 1.229 3.109c.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.175-1.43-.075-.125-.276-.2-.577-.35zm-5.42 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.866 11.866 0 0 0 5.713 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Navigation -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.nav_title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+            <li><a href="tienda.html" data-i18n="nav.shop">Tienda</a></li>
+            <li><a href="sobre-nosotros.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+            <li><a href="proyecto.html" data-i18n="nav.project">El Proyecto</a></li>
+            <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Collection -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.products_title">Colección</h4>
+          <ul class="footer-links">
+            <li><a href="producto-exfoliante.html" data-i18n="prod.scrub.name">Exfoliante de Café</a></li>
+            <li><a href="producto-hidratante.html" data-i18n="prod.cream.name">Crema Hidratante de Miel</a></li>
+            <li><a href="tienda.html" data-i18n="prod.bundle.name">Pack Golden Dúo</a></li>
+            <li><a href="tienda.html">Glow Botanical Elixir</a></li>
+            <li><a href="carrito.html" data-i18n="nav.cart">Bolsa de Compras</a></li>
+            <li><a href="cuenta.html" data-i18n="nav.account">Mi Cuenta</a></li>
+          </ul>
+        </div>
+
+        <!-- 4. Contact & Newsletter -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.contact_title">Contacto & Envíos</h4>
+          <p style="font-size: 0.875rem; margin-bottom: 0.6rem; color: #D1C5BD;">
+            Comayagua, Honduras (UNAH-CURC).
+          </p>
+          <p style="font-size: 0.85rem; margin-bottom: 1.25rem; color: #A89B92; line-height: 1.5;">
+            <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
+          </p>
+          <form id="newsletterForm" class="footer-newsletter-box">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar with Integrated Language Selector -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Golden Roast. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="politicas.html" data-i18n="footer.shipping_policy">Políticas y Envíos</a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="politicas.html#privacidad" data-i18n="footer.privacy">Aviso Legal</a>
+        </div>
+        <div class="footer-lang-container" id="footerLangMount">
+          <!-- Language switcher mounts cleanly here -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = goldenStorage.getUser();
+      if (!user) {
+        if (window.cartManager) {
+          window.cartManager.openAuthGateModal('checkout.html');
+        } else {
+          window.location.href = 'cuenta.html';
+        }
+        const mainCol = document.querySelector('.checkout-main-col');
+        if (mainCol) {
+          const lang = window.i18n ? window.i18n.currentLang : 'es';
+          mainCol.innerHTML = `
+            <div class="checkout-form-card" style="text-align: center; padding: 4rem 2rem;">
+              <div class="auth-gate-icon-badge" style="margin: 0 auto 1.5rem; width: 68px; height: 68px; border-radius: 50%; background: rgba(197, 147, 35, 0.15); color: var(--gold-dark); display: flex; align-items: center; justify-content: center;">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--coffee-deep); margin-bottom: 0.75rem;">
+                ${lang === 'es' ? 'Cuenta Requerida para Finalizar Compra' : 'Account Required for Checkout'}
+              </h3>
+              <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; max-width: 440px; margin: 0 auto 2rem;">
+                ${lang === 'es' ? 'Para registrar tu orden y coordinar la entrega en Comayagua, debes iniciar sesión o registrar tu cuenta primero.' : 'To register your order and coordinate campus delivery in Comayagua, please sign in or create an account first.'}
+              </p>
+              <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="cuenta.html" class="btn btn-primary">${lang === 'es' ? 'Iniciar Sesión / Registrarse' : 'Sign In / Register'}</a>
+                <a href="tienda.html" class="btn btn-outline">${lang === 'es' ? 'Volver a la Tienda' : 'Back to Shop'}</a>
+              </div>
+            </div>
+          `;
+        }
+        return;
+      }
+
+      // Pre-fill user profile info
+      if (user) {
+        if (document.getElementById('custName')) document.getElementById('custName').value = user.name || '';
+        if (document.getElementById('custEmail')) document.getElementById('custEmail').value = user.email || '';
+        if (document.getElementById('custPhone') && user.phone) document.getElementById('custPhone').value = user.phone;
+        if (document.getElementById('cardNameInput')) document.getElementById('cardNameInput').value = (user.name || '').toUpperCase();
+        if (document.getElementById('cardDisplayName')) document.getElementById('cardDisplayName').innerText = (user.name || 'TU NOMBRE').toUpperCase();
+      }
+
+      // Address type pills
+      const addrPills = document.querySelectorAll('.address-type-pill');
+      addrPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          addrPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+        });
+      });
+
+      // Payment Tabs (Card, Bank Transfer, Cash/POS)
+      const payTabs = document.querySelectorAll('.payment-tab-btn');
+      const paneCard = document.getElementById('paneCard');
+      const paneTransfer = document.getElementById('paneTransfer');
+      const paneCash = document.getElementById('paneCash');
+      const selectedPayMethod = document.getElementById('selectedPayMethod');
+
+      payTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          payTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const method = tab.getAttribute('data-pay-tab');
+          if (selectedPayMethod) selectedPayMethod.value = method;
+
+          if (paneCard) paneCard.style.display = method === 'card' ? 'block' : 'none';
+          if (paneTransfer) paneTransfer.style.display = method === 'transfer' ? 'block' : 'none';
+          if (paneCash) paneCash.style.display = method === 'cash' ? 'block' : 'none';
+
+          const btnText = document.getElementById('btnPayText');
+          if (btnText) {
+            if (method === 'card') btnText.innerText = 'Pagar con Tarjeta (POS)';
+            else if (method === 'transfer') btnText.innerText = 'Confirmar Pedido & Transferir';
+            else btnText.innerText = 'Confirmar Pedido Contra Entrega';
+          }
+        });
+      });
+
+      // Virtual Card Live Preview
+      const cardNumInput = document.getElementById('cardNumInput');
+      const cardNameInput = document.getElementById('cardNameInput');
+      const cardExpInput = document.getElementById('cardExpInput');
+      const cardCvvInput = document.getElementById('cardCvvInput');
+      const virtualCard = document.getElementById('virtualCard');
+      const cardDisplayNum = document.getElementById('cardDisplayNum');
+      const cardDisplayName = document.getElementById('cardDisplayName');
+      const cardDisplayExp = document.getElementById('cardDisplayExp');
+      const cardDisplayCvv = document.getElementById('cardDisplayCvv');
+      const cardBrandLogo = document.getElementById('cardBrandLogo');
+
+      if (cardNumInput) {
+        cardNumInput.addEventListener('input', (e) => {
+          let val = e.target.value.replace(/\D/g, '');
+          if (val.length > 16) val = val.substring(0, 16);
+          const parts = [];
+          for (let i = 0; i < val.length; i += 4) {
+            parts.push(val.substring(i, i + 4));
+          }
+          const formatted = parts.join(' ');
+          e.target.value = formatted;
+
+          if (cardDisplayNum) {
+            cardDisplayNum.innerText = formatted.padEnd(19, '•');
+          }
+
+          // Card Brand Detection
+          if (cardBrandLogo) {
+            if (val.startsWith('4')) {
+              cardBrandLogo.innerText = 'VISA';
+              cardBrandLogo.style.color = '#FFF';
+            } else if (val.startsWith('5')) {
+              cardBrandLogo.innerText = 'Mastercard';
+              cardBrandLogo.style.color = '#FF5F00';
+            } else if (val.startsWith('3')) {
+              cardBrandLogo.innerText = 'AMEX';
+              cardBrandLogo.style.color = '#006FCF';
+            } else {
+              cardBrandLogo.innerText = 'VISA';
+              cardBrandLogo.style.color = '#FFF';
+            }
+          }
+        });
+      }
+
+      if (cardNameInput) {
+        cardNameInput.addEventListener('input', (e) => {
+          const val = e.target.value.toUpperCase();
+          if (cardDisplayName) cardDisplayName.innerText = val || 'TU NOMBRE';
+        });
+      }
+
+      if (cardExpInput) {
+        cardExpInput.addEventListener('input', (e) => {
+          let val = e.target.value.replace(/\D/g, '');
+          if (val.length > 4) val = val.substring(0, 4);
+          if (val.length > 2) {
+            val = val.substring(0, 2) + '/' + val.substring(2);
+          }
+          e.target.value = val;
+          if (cardDisplayExp) cardDisplayExp.innerText = val || 'MM/AA';
+        });
+      }
+
+      if (cardCvvInput) {
+        cardCvvInput.addEventListener('focus', () => {
+          if (virtualCard) virtualCard.classList.add('flipped');
+        });
+        cardCvvInput.addEventListener('blur', () => {
+          if (virtualCard) virtualCard.classList.remove('flipped');
+        });
+        cardCvvInput.addEventListener('input', (e) => {
+          const val = e.target.value.replace(/\D/g, '');
+          e.target.value = val;
+          if (cardDisplayCvv) cardDisplayCvv.innerText = val ? '•'.repeat(val.length) : '•••';
+        });
+      }
+
+      // Copy Bank Account Buttons
+      document.querySelectorAll('.btn-copy-account').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const acc = btn.getAttribute('data-copy');
+          navigator.clipboard.writeText(acc).then(() => {
+            const orig = btn.innerText;
+            btn.innerText = '¡Copiado! ✓';
+            btn.style.background = '#10B981';
+            btn.style.color = '#FFF';
+            setTimeout(() => {
+              btn.innerText = orig;
+              btn.style.background = '';
+              btn.style.color = '';
+            }, 2000);
+          });
+        });
+      });
+
+      // Coupon System (e.g. GOLDEN10)
+      const btnCoupon = document.getElementById('btnApplyCouponCode');
+      const couponInput = document.getElementById('couponCodeInput');
+      const couponFeedback = document.getElementById('couponFeedbackMsg');
+
+      if (btnCoupon && couponInput) {
+        btnCoupon.addEventListener('click', () => {
+          const code = (couponInput.value || '').trim().toUpperCase();
+          if (code === 'GOLDEN10') {
+            goldenStorage.set('coupon', 'GOLDEN10');
+            if (couponFeedback) {
+              couponFeedback.style.display = 'block';
+              couponFeedback.style.color = '#0E9F6E';
+              couponFeedback.innerText = '✓ ¡Cupón GOLDEN10 aplicado! 10% de descuento concedido.';
+            }
+          } else if (code === '') {
+            goldenStorage.remove('coupon');
+            if (couponFeedback) couponFeedback.style.display = 'none';
+          } else {
+            if (couponFeedback) {
+              couponFeedback.style.display = 'block';
+              couponFeedback.style.color = '#E02424';
+              couponFeedback.innerText = '✗ Código inválido. Usa GOLDEN10 para 10% de descuento.';
+            }
+          }
+          renderCheckoutSummary();
+        });
+      }
+
+      // Initial Cart Render
+      renderCheckoutSummary();
+
+      // Submit Amazon Order Handler
+      const btnPay = document.getElementById('btnPlaceOrderAmazon');
+      if (btnPay) {
+        btnPay.addEventListener('click', handleAmazonCheckout);
+      }
+    });
+
+    function renderCheckoutSummary() {
+      const cart = goldenStorage.getCart();
+      const miniListEl = document.getElementById('checkoutMiniList');
+      if (!miniListEl) return;
+
+      miniListEl.innerHTML = '';
+      if (!cart || cart.length === 0) {
+        miniListEl.innerHTML = '<div style="color: var(--text-muted); font-size: 0.9rem; padding: 1.5rem 0; text-align: center;">Tu bolsa está vacía.<br><a href="tienda.html" class="btn btn-outline btn-sm" style="margin-top: 0.75rem;">Ver Catálogo</a></div>';
+      } else {
+        cart.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'checkout-mini-item';
+          const lineTot = (Number(item.price) * Number(item.quantity)).toFixed(2);
+          const lang = window.i18n ? window.i18n.currentLang : 'es';
+          const title = lang === 'es' ? (item.name_es || item.name) : item.name;
+          const imgPath = item.image || 'assets/img/producto-exfoliante.png';
+
+          row.innerHTML = `
+            <img src="${imgPath}" alt="${title}" class="checkout-mini-thumb">
+            <div class="checkout-mini-details">
+              <div class="checkout-mini-title">${title}</div>
+              <div class="checkout-mini-qty">${item.quantity} × L ${(Number(item.price)).toFixed(2)}</div>
+            </div>
+            <div class="checkout-mini-price">L ${lineTot}</div>
+          `;
+          miniListEl.appendChild(row);
+        });
+      }
+
+      const totals = goldenStorage.calculateTotals();
+      if (document.getElementById('chkSubtotal')) document.getElementById('chkSubtotal').innerText = 'L ' + totals.subtotal.toFixed(2);
+      if (document.getElementById('chkDelivery')) document.getElementById('chkDelivery').innerText = totals.delivery === 0 ? '¡GRATIS!' : 'L ' + totals.delivery.toFixed(2);
+      if (document.getElementById('chkTotal')) document.getElementById('chkTotal').innerText = 'L ' + totals.total.toFixed(2);
+      if (document.getElementById('chkTotalUsd')) document.getElementById('chkTotalUsd').innerText = '(aprox. $' + (totals.total / 24).toFixed(2) + ' USD)';
+
+      const discRow = document.getElementById('chkDiscountRow');
+      if (discRow) {
+        if (totals.discount > 0) {
+          discRow.style.display = 'flex';
+          document.getElementById('chkDiscount').innerText = '-L ' + totals.discount.toFixed(2);
+        } else {
+          discRow.style.display = 'none';
+        }
+      }
+
+      // Free shipping progress bar
+      const fill = document.getElementById('freeShipFill');
+      const statusText = document.getElementById('freeShipStatusText');
+      if (fill && statusText) {
+        const pct = Math.min(100, Math.round((totals.subtotal / 300) * 100));
+        fill.style.width = pct + '%';
+        if (totals.subtotal >= 300) {
+          statusText.innerText = '🎉 ¡Felicidades! Tienes Envío Gratis en Comayagua';
+          statusText.style.color = '#0E9F6E';
+        } else {
+          statusText.innerText = `Agrega L ${(300 - totals.subtotal).toFixed(2)} más para Envío Gratis`;
+          statusText.style.color = 'var(--coffee-deep)';
+        }
+      }
+
+      // Update button text with total
+      const btnText = document.getElementById('btnPayText');
+      const method = document.getElementById('selectedPayMethod') ? document.getElementById('selectedPayMethod').value : 'card';
+      if (btnText) {
+        if (method === 'card') btnText.innerText = `Pagar con Tarjeta L ${totals.total.toFixed(2)}`;
+        else if (method === 'transfer') btnText.innerText = `Confirmar Pedido L ${totals.total.toFixed(2)}`;
+        else btnText.innerText = `Confirmar Pedido Contra Entrega L ${totals.total.toFixed(2)}`;
+      }
+    }
+
+    function handleAmazonCheckout() {
+      const cart = goldenStorage.getCart();
+      if (!cart || cart.length === 0) {
+        alert('Tu bolsa de compras está vacía.');
+        window.location.href = 'tienda.html';
+        return;
+      }
+
+      const name = document.getElementById('custName') ? document.getElementById('custName').value.trim() : '';
+      const phone = document.getElementById('custPhone') ? document.getElementById('custPhone').value.trim() : '';
+      const email = document.getElementById('custEmail') ? document.getElementById('custEmail').value.trim() : '';
+      const location = document.getElementById('custLocation') ? document.getElementById('custLocation').value : '';
+      const address = document.getElementById('custAddress') ? document.getElementById('custAddress').value.trim() : '';
+      const notes = document.getElementById('custNotes') ? document.getElementById('custNotes').value.trim() : '';
+      const payMethod = document.getElementById('selectedPayMethod') ? document.getElementById('selectedPayMethod').value : 'card';
+
+      if (!name || !phone || !email || !location || !address) {
+        alert('Por favor completa todos los campos requeridos de la dirección de entrega.');
+        if (!name && document.getElementById('custName')) document.getElementById('custName').focus();
+        else if (!phone && document.getElementById('custPhone')) document.getElementById('custPhone').focus();
+        else if (!address && document.getElementById('custAddress')) document.getElementById('custAddress').focus();
+        return;
+      }
+
+      // If Card method, validate card input formats
+      if (payMethod === 'card') {
+        const cardNum = document.getElementById('cardNumInput') ? document.getElementById('cardNumInput').value.replace(/\s/g, '') : '';
+        const cardExp = document.getElementById('cardExpInput') ? document.getElementById('cardExpInput').value.trim() : '';
+        const cardCvv = document.getElementById('cardCvvInput') ? document.getElementById('cardCvvInput').value.trim() : '';
+
+        if (cardNum.length < 15 || !cardExp.includes('/') || cardCvv.length < 3) {
+          alert('Por favor verifica los datos de tu tarjeta (Número, Fecha de Expiración MM/AA y CVV).');
+          if (document.getElementById('cardNumInput')) document.getElementById('cardNumInput').focus();
+          return;
+        }
+      }
+
+      // Trigger Amazon POS processing animation
+      const overlay = document.getElementById('posProcessingOverlay');
+      const msg = document.getElementById('posProcessingMsg');
+      const sub = document.getElementById('posProcessingSub');
+      if (overlay) overlay.classList.add('active');
+
+      const totals = goldenStorage.calculateTotals();
+      const orderNum = 'GR-' + Math.floor(100000 + Math.random() * 900000);
+
+      let methodLabel = 'Tarjeta de Crédito/Débito (POS)';
+      if (payMethod === 'transfer') methodLabel = 'Transferencia Bancaria Local';
+      if (payMethod === 'cash') methodLabel = 'Contra Entrega en Comayagua';
+
+      const orderData = {
+        orderNumber: orderNum,
+        date: new Date().toISOString(),
+        customerName: name,
+        customerEmail: email,
+        customerPhone: phone,
+        deliveryLocation: location,
+        address: address,
+        notes: notes,
+        paymentMethod: methodLabel,
+        items: cart,
+        subtotal: totals.subtotal,
+        discount: totals.discount,
+        delivery: totals.delivery,
+        total: totals.total,
+        status: 'Confirmado (En Preparación)'
+      };
+
+      // Sequential status sequence
+      setTimeout(() => {
+        if (sub) sub.innerText = 'Validando autorización bancaria y reservando lote botánico...';
+      }, 700);
+
+      setTimeout(() => {
+        if (msg) msg.innerText = '¡Transacción Aprobada! ✓';
+        if (sub) sub.innerText = 'Generando recibo digital e iniciando despacho...';
+      }, 1400);
+
+      setTimeout(() => {
+        if (overlay) overlay.classList.remove('active');
+
+        // Persist order in GoldenStorage
+        goldenStorage.addOrder(orderData);
+        goldenStorage.clearCart();
+
+        // Update stepper to completed
+        const step2 = document.getElementById('stepNode2');
+        const step3 = document.getElementById('stepNode3');
+        if (step2) { step2.classList.remove('active'); step2.classList.add('completed'); step2.querySelector('.step-circle').innerText = '✓'; }
+        if (step3) { step3.classList.add('active'); }
+
+        // Populate receipt modal
+        document.getElementById('modalOrderNumber').innerText = '#' + orderData.orderNumber;
+        document.getElementById('modalOrderCustomer').innerText = orderData.customerName;
+        document.getElementById('modalOrderLocation').innerText = orderData.deliveryLocation + ' (' + orderData.address + ')';
+        document.getElementById('modalOrderPayMethod').innerText = orderData.paymentMethod;
+        document.getElementById('modalOrderTotal').innerText = 'L ' + orderData.total.toFixed(2);
+
+        // WhatsApp direct link
+        const waText = encodeURIComponent(`Hola equipo Golden Roast, acabo de registrar el pedido #${orderData.orderNumber} a nombre de ${orderData.customerName} por un total de L ${orderData.total.toFixed(2)}. Mi punto de entrega es: ${orderData.deliveryLocation}.`);
+        const waBtn = document.getElementById('btnModalWhatsapp');
+        if (waBtn) waBtn.href = 'https://wa.me/50499999999?text=' + waText;
+
+        // Populate items in modal
+        const modalItems = document.getElementById('modalOrderItems');
+        if (modalItems) {
+          modalItems.innerHTML = '';
+          cart.forEach(it => {
+            const row = document.createElement('div');
+            row.className = 'receipt-item-line';
+            const lang = window.i18n ? window.i18n.currentLang : 'es';
+            const title = lang === 'es' ? (it.name_es || it.name) : it.name;
+            const lineTot = (Number(it.price) * Number(it.quantity)).toFixed(2);
+            row.innerHTML = '<span>' + it.quantity + ' × ' + title + '</span><strong>L ' + lineTot + '</strong>';
+            modalItems.appendChild(row);
+          });
+        }
+
+        // Copy order number button
+        const btnCopyOrder = document.getElementById('btnCopyModalOrder');
+        if (btnCopyOrder) {
+          btnCopyOrder.onclick = () => {
+            navigator.clipboard.writeText(orderData.orderNumber);
+            btnCopyOrder.innerText = '✓';
+            setTimeout(() => { btnCopyOrder.innerText = 'Copiar'; }, 2000);
+          };
+        }
+
+        const modalEl = document.getElementById('orderModal');
+        if (modalEl) modalEl.classList.add('active');
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

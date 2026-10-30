@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crema Hidratante de Miel | Golden Roast - Cuidado Botánico</title>
+  <meta name="description" content="Crema hidratante artesanal de miel pura de abeja, aloe vera y glicerina vegetal para una hidratación profunda y piel aterciopelada.">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .product-detail-section { padding: 3.5rem 0 5rem; }
+    .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+    .product-main-view { background: #FAF5ED; border-radius: var(--radius-lg); padding: 3rem; text-align: center; border: 1px solid var(--surface-border); }
+    .product-main-view img { max-height: 420px; margin: 0 auto; border-radius: var(--radius-md); }
+    .tabs-nav { display: flex; border-bottom: 1px solid var(--surface-border); gap: 2rem; margin-top: 2rem; }
+    .tab-btn { background: none; border: none; padding: 0.85rem 0; font-size: 1rem; font-weight: 600; color: var(--text-muted); cursor: pointer; position: relative; }
+    .tab-btn.active { color: var(--coffee-deep); }
+    .tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--gold-primary); }
+    .tab-pane { display: none; padding: 1.5rem 0; line-height: 1.7; color: var(--text-muted); }
+    .tab-pane.active { display: block; }
+    .ingredient-item { background: #FFFFFF; border: 1px solid var(--surface-border); padding: 0.85rem 1.25rem; border-radius: var(--radius-sm); margin-bottom: 0.65rem; }
+    .recipe-box { background: #FAF5ED; border: 1px solid var(--surface-border); padding: 1.5rem; border-radius: var(--radius-md); margin-top: 1.25rem; }
+    .gallery-thumbs { display: flex; gap: 1rem; margin-top: 1rem; justify-content: center; }
+    .gallery-thumb-item { width: 70px; height: 70px; border-radius: var(--radius-sm); border: 2px solid var(--surface-border); overflow: hidden; cursor: pointer; }
+    .gallery-thumb-item.active { border-color: var(--gold-primary); }
+    .gallery-thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Dynamic Animated Background (Windows 11 Fluent Acrylic & Apple Aura) -->
+  <div class="ambient-backdrop-aura" aria-hidden="true">
+    <div class="aura-blob aura-blob-1"></div>
+    <div class="aura-blob aura-blob-2"></div>
+    <div class="aura-blob aura-blob-3"></div>
+    <div class="aura-blob aura-blob-4"></div>
+    <div class="aura-blob aura-blob-5"></div>
+  </div>
+
+
+  <!-- Brand Preloader -->
+  <div class="site-preloader" id="sitePreloader">
+    <img src="assets/img/logo.png" alt="Golden Roast" class="preloader-drop">
+    <div class="preloader-text">Golden Roast</div>
+    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;" data-i18n="brand.slogan">The Golden touch of nature</div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement">
+    <span class="badge-pill" data-i18n="nav.tag_badge">Golden Roast</span>
+    <span data-i18n="nav.announcement">Envío gratis en Comayagua en compras mayores a L 300 · Cosmética Natural</span>
+  </div>
+
+      <!-- Header (Apple Human Interface × Windows 11 Fluent Acrylic) -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" translate="no">
+        <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+        <div class="brand-text notranslate" translate="no">
+          <span class="brand-name notranslate" translate="no">Golden<span>Roast</span></span>
+          <span class="brand-slogan notranslate" translate="no">The Golden touch of nature</span>
+        </div>
+      </a>
+
+      <!-- Navigation Dock & Off-Canvas Mobile Drawer -->
+      <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-header">
+          <div class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast" class="brand-logo-img" style="width: 36px; height: 36px;">
+            <span class="brand-name notranslate" translate="no" style="font-size: 1.25rem;">Golden<span>Roast</span></span>
+          </div>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation">&times;</button>
+        </div>
+
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span data-i18n="nav.home">Inicio</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tienda.html" class="active">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span data-i18n="nav.shop">Tienda</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sobre-nosotros.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span data-i18n="nav.about">Sobre Nosotros</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="proyecto.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+              <span data-i18n="nav.project">El Proyecto</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contacto.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span data-i18n="nav.contact">Contacto</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+          <a href="cuenta.html" class="nav-account-btn " style="width: 100%; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-i18n="nav.account">Mi Cuenta</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="cuenta.html" class="nav-account-btn ">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-i18n="nav.account">Mi Cuenta</span>
+        </a>
+
+        <button class="btn-cart-nav" aria-label="Abrir Bolsa de Compras">
+          <svg class="cart-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <span data-i18n="nav.cart">Bolsa</span>
+          <span class="cart-badge">0</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Abrir Menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-detail-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;">
+        <a href="index.html" data-i18n="nav.home">Inicio</a> &rsaquo; 
+        <a href="tienda.html" data-i18n="nav.shop">Tienda</a> &rsaquo; 
+        <span style="color: var(--coffee-deep); font-weight: 600;">Crema Hidratante de Miel</span>
+      </nav>
+
+      <div class="product-detail-grid">
+        <div class="product-gallery">
+          <div class="product-main-view">
+            <img id="mainProductImage" src="assets/img/producto-hidratante.png" alt="Crema Hidratante de Miel Golden Roast">
+          </div>
+          <div class="gallery-thumbs">
+            <div class="gallery-thumb-item active" onclick="changeImage('assets/img/producto-hidratante.png', this)">
+              <img src="assets/img/producto-hidratante.png" alt="Crema Hidratante">
+            </div>
+            <div class="gallery-thumb-item" onclick="changeImage('assets/img/photo-honey.webp', this)">
+              <img src="assets/img/photo-honey.webp" alt="Miel Pura">
+            </div>
+            <div class="gallery-thumb-item" onclick="changeImage('assets/img/photo-cream-texture.webp', this)">
+              <img src="assets/img/photo-cream-texture.webp" alt="Textura Sedosa">
+            </div>
+            <div class="gallery-thumb-item" onclick="changeImage('assets/img/photo-aloe-vera.webp', this)">
+              <img src="assets/img/photo-aloe-vera.webp" alt="Aloe Vera Botánico">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; gap: 0.6rem; margin-bottom: 0.85rem;">
+            <span class="badge badge-gold" data-i18n="product.step2">Paso 2: Nutrir</span>
+            <span class="badge badge-coffee">Cosmética Natural</span>
+          </div>
+
+          <h1 style="font-family: var(--font-heading); font-size: 2.6rem; color: var(--coffee-deep); line-height: 1.15; margin-bottom: 0.6rem;" data-i18n="prod.cream.name">
+            Crema Hidratante de Miel
+          </h1>
+
+          <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <span style="font-family: var(--font-heading); font-size: 2.1rem; font-weight: 700; color: var(--coffee-deep);">L 200.00</span>
+            <span style="font-size: 1rem; color: var(--text-muted);">(aprox. $8.50 USD)</span>
+          </div>
+
+          <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+            La crema hidratante de miel Golden Roast es una fórmula cosmética que combina miel pura, gel de aloe vera, glicerina vegetal y aceite de coco. Su propósito es ayudar a retener la hidratación natural de la piel, aportando suavidad sin sensación pesada ni grasa. Este producto complementa al exfoliante de café al acondicionar y proteger la piel después de la renovación celular.
+          </p>
+
+          <!-- Quantity & Add to Bag -->
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--surface-border);">
+            <div class="quantity-picker" style="display: inline-flex; align-items: center; border: 1px solid var(--surface-border); border-radius: var(--radius-full); padding: 0.25rem 0.5rem; background: #FFFFFF;">
+              <button class="qty-btn btn-qty-dec" style="border: none; background: none; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem;">-</button>
+              <input type="text" class="qty-input" value="1" readonly data-qty-for="hidratante" style="width: 40px; text-align: center; border: none; font-weight: 700;">
+              <button class="qty-btn btn-qty-inc" style="border: none; background: none; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem;">+</button>
+            </div>
+
+            <button class="btn btn-primary" data-add-cart="hidratante" style="flex: 1;" data-i18n="btn.add_to_cart">
+              Añadir a la Bolsa (L 200.00)
+            </button>
+          </div>
+
+          <!-- Highlight Points -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span style="font-size: 0.9rem; font-weight: 600;">Humectación prolongada</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span style="font-size: 0.9rem; font-weight: 600;">Textura no grasa ni pegajosa</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span style="font-size: 0.9rem; font-weight: 600;">Aloe vera calmante</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span style="font-size: 0.9rem; font-weight: 600;">Presentación frasco 150ml</span>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="ingredientes">Ingredientes & Fórmula</button>
+            <button class="tab-btn" data-tab="uso">Modo de Aplicación</button>
+            <button class="tab-btn" data-tab="rutina">Sinergia Dúo</button>
+          </div>
+
+          <div class="tab-pane active" id="tab-ingredientes">
+            <p style="margin-bottom: 1rem;">Formulación según la documentación técnica del proyecto:</p>
+            <div class="ingredient-item">
+              <strong>Miel pura de abeja (2 cucharadas soperas):</strong> Humectante natural de alta afinidad con el estrato córneo que retiene la humedad y aporta emoliencia.
+            </div>
+            <div class="ingredient-item">
+              <strong>Gel de aloe vera (4 cucharadas soperas):</strong> Proporciona hidratación acuosa ligera y efecto refrescante calmante.
+            </div>
+            <div class="ingredient-item">
+              <strong>Aceite de coco virgen (1 cucharadita):</strong> Aporta ácidos grasos esenciales para sellar la humedad sin ocluir los poros.
+            </div>
+            <div class="ingredient-item">
+              <strong>Glicerina vegetal (media cucharadita):</strong> Agente higroscópico que atrae y retiene agua en las capas superficiales de la epidermis.
+            </div>
+
+            <div class="recipe-box">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--coffee-deep); margin-bottom: 0.5rem;">Proceso de Emulsión Artesanal:</h4>
+              <p style="font-size: 0.885rem; color: var(--text-muted); line-height: 1.6;">
+                Se integran en frío las 2 cucharadas de miel y las 4 de aloe vera hasta lograr una base homogénea. Posteriormente se incorpora el aceite de coco y la glicerina, mezclando con movimientos envolventes para obtener una textura cremosa, ligera y de rápida absorción cutánea.
+              </p>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="tab-uso">
+            <ol style="padding-left: 1.25rem; line-height: 1.8;">
+              <li>Limpiar o exfoliar la zona previamente para asegurar una absorción óptima.</li>
+              <li>Aplicar una pequeña cantidad de crema sobre la piel seca o ligeramente húmeda.</li>
+              <li>Distribuir con masajes circulares ascendentes hasta su completa absorción.</li>
+              <li>Puede utilizarse tanto de día como de noche para mantener la suavidad de la piel.</li>
+            </ol>
+            <p style="margin-top: 1rem; font-size: 0.885rem; color: var(--text-muted);">
+              <strong>Recomendación:</strong> Apta para uso diario en rostro (piel normal a seca) y cuerpo. En pieles sensibles se aconseja una prueba de parche en el antebrazo.
+            </p>
+          </div>
+
+          <div class="tab-pane" id="tab-rutina">
+            <p style="margin-bottom: 1rem;">
+              La crema hidratante constituye el <strong>Paso 2</strong> de la rutina Golden Roast. Aplicada tras la exfoliación con café (Paso 1), sella los beneficios regenerativos y crea una capa protectora suave contra la deshidratación y los factores ambientales diarios.
+            </p>
+            <a href="tienda.html" class="btn btn-outline btn-sm">Ver Pack Golden Dúo (Ahorra L 30.00)</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <!-- Footer (Enterprise Luxury Dark Acrylic & Social Hub) -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 1. Brand & Socials -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+            <div class="brand-text notranslate" translate="no">
+              <span class="brand-name notranslate" translate="no" style="color: #FFFFFF;">Golden<span style="color: var(--gold-pale);">Roast</span></span>
+              <span class="brand-slogan notranslate" translate="no" style="color: #FFE699;" data-i18n="brand.slogan">The Golden touch of nature</span>
+            </div>
+          </a>
+          <p data-i18n="footer.brand_desc">
+            Cosmética botánica artesanal inspirada en café tostado y miel pura de abeja. Iniciativa universitaria desarrollada en el Centro Regional UNAH-CURC en Comayagua.
+          </p>
+
+          <!-- Social Media Icons (Instagram, Facebook, TikTok, WhatsApp) -->
+          
+          <div class="footer-social-bar">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram de Golden Roast" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook de Golden Roast" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="TikTok de Golden Roast" title="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
+            </a>
+            <a href="https://wa.me/50499999999" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp de Atención Golden Roast" title="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.175.2-.351.226-.652.076-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.175-.3-.019-.463.132-.613.136-.134.301-.351.451-.527.151-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.631-.927-2.233-.244-.587-.492-.507-.676-.516l-.577-.01c-.2 0-.527.075-.802.376s-1.053 1.028-1.053 2.508 1.078 2.909 1.229 3.109c.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.175-1.43-.075-.125-.276-.2-.577-.35zm-5.42 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.866 11.866 0 0 0 5.713 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Navigation -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.nav_title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+            <li><a href="tienda.html" data-i18n="nav.shop">Tienda</a></li>
+            <li><a href="sobre-nosotros.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+            <li><a href="proyecto.html" data-i18n="nav.project">El Proyecto</a></li>
+            <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Collection -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.products_title">Colección</h4>
+          <ul class="footer-links">
+            <li><a href="producto-exfoliante.html" data-i18n="prod.scrub.name">Exfoliante de Café</a></li>
+            <li><a href="producto-hidratante.html" data-i18n="prod.cream.name">Crema Hidratante de Miel</a></li>
+            <li><a href="tienda.html" data-i18n="prod.bundle.name">Pack Golden Dúo</a></li>
+            <li><a href="tienda.html">Glow Botanical Elixir</a></li>
+            <li><a href="carrito.html" data-i18n="nav.cart">Bolsa de Compras</a></li>
+            <li><a href="cuenta.html" data-i18n="nav.account">Mi Cuenta</a></li>
+          </ul>
+        </div>
+
+        <!-- 4. Contact & Newsletter -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.contact_title">Contacto & Envíos</h4>
+          <p style="font-size: 0.875rem; margin-bottom: 0.6rem; color: #D1C5BD;">
+            Comayagua, Honduras (UNAH-CURC).
+          </p>
+          <p style="font-size: 0.85rem; margin-bottom: 1.25rem; color: #A89B92; line-height: 1.5;">
+            <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
+          </p>
+          <form id="newsletterForm" class="footer-newsletter-box">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar with Integrated Language Selector -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Golden Roast. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="politicas.html" data-i18n="footer.shipping_policy">Políticas y Envíos</a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="politicas.html#privacidad" data-i18n="footer.privacy">Aviso Legal</a>
+        </div>
+        <div class="footer-lang-container" id="footerLangMount">
+          <!-- Language switcher mounts cleanly here -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function changeImage(src, el) {
+      document.getElementById('mainProductImage').src = src;
+      document.querySelectorAll('.gallery-thumb-item').forEach(item => item.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const tabId = 'tab-' + btn.getAttribute('data-tab');
+        const pane = document.getElementById(tabId);
+        if (pane) pane.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

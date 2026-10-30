@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Proyecto | Golden Roast - Memoria Académica y Emprendimiento</title>
+  <meta name="description" content="Documentación académica del proyecto Golden Roast: Universidad Politécnica de Honduras, Centro Asociado de Comayagua. Objetivos, formulación y análisis de seguridad.">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .academic-header { background: linear-gradient(135deg, var(--coffee-deep) 0%, #3D251A 100%); color: #FFFFFF; padding: 4.5rem 0 3.5rem; text-align: center; }
+    .academic-card { background: #FFFFFF; border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--surface-border); box-shadow: var(--shadow-sm); margin-bottom: 2.5rem; }
+    .academic-card h3 { font-family: var(--font-heading); color: var(--coffee-deep); font-size: 1.6rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; border-bottom: 1px solid var(--surface-border); padding-bottom: 0.75rem; }
+    .objective-list { list-style: none; padding: 0; }
+    .objective-list li { position: relative; padding-left: 2rem; margin-bottom: 1rem; color: var(--text-muted); line-height: 1.65; }
+    .objective-list li::before { content: '→'; position: absolute; left: 0; top: 0; color: var(--gold-primary); font-weight: 700; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Dynamic Animated Background (Windows 11 Fluent Acrylic & Apple Aura) -->
+  <div class="ambient-backdrop-aura" aria-hidden="true">
+    <div class="aura-blob aura-blob-1"></div>
+    <div class="aura-blob aura-blob-2"></div>
+    <div class="aura-blob aura-blob-3"></div>
+    <div class="aura-blob aura-blob-4"></div>
+    <div class="aura-blob aura-blob-5"></div>
+  </div>
+
+
+  <!-- Brand Preloader -->
+  <div class="site-preloader" id="sitePreloader">
+    <img src="assets/img/logo.png" alt="Golden Roast" class="preloader-drop">
+    <div class="preloader-text">Golden Roast</div>
+    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;" data-i18n="brand.slogan">The Golden touch of nature</div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement">
+    <span class="badge-pill" data-i18n="nav.tag_badge">Golden Roast</span>
+    <span data-i18n="nav.announcement">Envío gratis en Comayagua en compras mayores a L 300 · Cosmética Natural</span>
+  </div>
+
+      <!-- Header (Apple Human Interface × Windows 11 Fluent Acrylic) -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" translate="no">
+        <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+        <div class="brand-text notranslate" translate="no">
+          <span class="brand-name notranslate" translate="no">Golden<span>Roast</span></span>
+          <span class="brand-slogan notranslate" translate="no">The Golden touch of nature</span>
+        </div>
+      </a>
+
+      <!-- Navigation Dock & Off-Canvas Mobile Drawer -->
+      <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-header">
+          <div class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast" class="brand-logo-img" style="width: 36px; height: 36px;">
+            <span class="brand-name notranslate" translate="no" style="font-size: 1.25rem;">Golden<span>Roast</span></span>
+          </div>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation">&times;</button>
+        </div>
+
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span data-i18n="nav.home">Inicio</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tienda.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span data-i18n="nav.shop">Tienda</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sobre-nosotros.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span data-i18n="nav.about">Sobre Nosotros</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="proyecto.html" class="active">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+              <span data-i18n="nav.project">El Proyecto</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contacto.html" class="">
+              <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span data-i18n="nav.contact">Contacto</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+          <a href="cuenta.html" class="nav-account-btn " style="width: 100%; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-i18n="nav.account">Mi Cuenta</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="cuenta.html" class="nav-account-btn ">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-i18n="nav.account">Mi Cuenta</span>
+        </a>
+
+        <button class="btn-cart-nav" aria-label="Abrir Bolsa de Compras">
+          <svg class="cart-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <span data-i18n="nav.cart">Bolsa</span>
+          <span class="cart-badge">0</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Abrir Menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="academic-header">
+      <div class="container">
+        <span class="badge badge-gold" style="margin-bottom: 1rem;">Universidad Politécnica de Honduras</span>
+        <h1 style="font-family: var(--font-heading); font-size: 2.75rem; margin-bottom: 0.85rem;">
+          Iniciativa de Emprendimiento Universitario: Golden Roast
+        </h1>
+        <p style="color: #D1C5BD; max-width: 720px; margin: 0 auto 1.5rem; font-size: 1.05rem; line-height: 1.7;">
+          Centro Asociado de Comayagua · Documentación académica sobre objetivos de investigación, desarrollo de prototipos, propuesta de valor y consideraciones técnicas.
+        </p>
+        <div style="display: inline-flex; gap: 1.5rem; font-size: 0.875rem; color: #FFE699; background: rgba(0,0,0,0.25); padding: 0.6rem 1.4rem; border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.1);">
+          <span><strong>Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 4.5rem 0;">
+      <div class="container" style="max-width: 960px;">
+
+        <!-- 1. Introducción -->
+        <article class="academic-card">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            1. Introducción al Proyecto
+          </h3>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1rem;">
+            Golden Roast es un proyecto de negocio desarrollado alrededor de la idea de ofrecer productos de cuidado personal inspirados en ingredientes naturales como el café y la miel. Nuestra propuesta se centra en el cuidado de la piel a través de dos productos principales: un exfoliante a base de café y una crema hidratante inspirada en la miel, formulada con otros ingredientes destinados a ayudar a mantener la piel suave e hidratada.
+          </p>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1rem;">
+            La presentación del negocio tiene como objetivo introducir nuestra idea de negocio, demostrar los prototipos y explicar cómo ambos productos podrían encajar en una rutina básica de cuidado de la piel. También queremos destacar la importancia de una presentación atractiva, una cuidadosa selección de ingredientes y la construcción de confianza entre las personas interesadas en nuestra propuesta.
+          </p>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">
+            Con Golden Roast, buscamos convertir una idea simple en una oportunidad emprendedora, enfatizando el valor de la innovación, la creatividad y el cuidado personal.
+          </p>
+        </article>
+
+        <!-- 2. Objetivos -->
+        <article class="academic-card">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
+            2. Objetivos del Emprendimiento
+          </h3>
+          
+          <h4 style="font-size: 1.15rem; color: var(--coffee-deep); margin-bottom: 0.75rem;">Objetivo General:</h4>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.75rem; background: var(--cream-alt); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--gold-primary);">
+            Desarrollar y presentar una propuesta de emprendimiento centrada en un exfoliante de café y una crema hidratante inspirada en la miel, destacando sus características, ingredientes, usos y potencial como productos de cuidado personal.
+          </p>
+
+          <h4 style="font-size: 1.15rem; color: var(--coffee-deep); margin-bottom: 0.75rem;">Objetivos Específicos:</h4>
+          <ul class="objective-list">
+            <li>Presentar dos prototipos de productos para el cuidado de la piel: un exfoliante de café y una crema hidratante de miel.</li>
+            <li>Describir las características, usos, cualidades e ingredientes de cada producto formulado.</li>
+            <li>Fomentar el interés por el emprendimiento a través de una propuesta creativa y atractiva centrada en el cuidado personal.</li>
+            <li>Identificar oportunidades para mejorar la presentación, formulación y potencial comercialización de los productos en la región central de Honduras.</li>
+          </ul>
+        </article>
+
+        <!-- 3. Formulación y Análisis Técnico -->
+        <article class="academic-card">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            3. Formulación de Prototipos y Evaluación de Seguridad
+          </h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.75rem;">
+            <div style="background: var(--cream-alt); padding: 1.5rem; border-radius: var(--radius-sm);">
+              <h4 style="color: var(--coffee-deep); margin-bottom: 0.75rem;">Prototipo 1: Exfoliante de Café</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.5rem;">
+                <strong>Ingredientes:</strong> Café tostado molido, azúcar, miel pura de abeja, aceite de coco virgen.
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                <strong>Mecanismo de acción:</strong> Exfoliación mecánica superficial mediante micropartículas de café y cristales de azúcar disueltos en fase lipídica de coco. Remueve células desprendidas del estrato córneo estimulando la microcirculación cutánea superficial.
+              </p>
+            </div>
+
+            <div style="background: var(--cream-alt); padding: 1.5rem; border-radius: var(--radius-sm);">
+              <h4 style="color: var(--coffee-deep); margin-bottom: 0.75rem;">Prototipo 2: Crema Hidratante de Miel</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.5rem;">
+                <strong>Ingredientes:</strong> 2 cucharadas de miel pura, 4 cucharadas de gel de aloe vera, 1 cucharadita de aceite de coco, 1/2 cucharadita de glicerina vegetal.
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                <strong>Mecanismo de acción:</strong> Emulsión humectante que aporta hidratación directa por el contenido acuoso del aloe vera y retención transepidérmica mediada por la miel y la glicerina, sellada por triglicéridos de coco.
+              </p>
+            </div>
+          </div>
+
+          <div style="background: #FFF9E6; border-left: 4px solid var(--gold-primary); padding: 1.25rem 1.5rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.925rem; color: #7A5805; line-height: 1.65;">
+            <strong>Revisión dermatológica y pH (Bicarbonato de Sodio):</strong><br>
+            Durante las pruebas preliminares de formulación se consideró la inclusión de bicarbonato de sodio en la mezcla exfoliante. Tras evaluar los estándares dermocosméticos y el pH fisiológico de la piel humana (que oscila entre 4.7 y 5.5), se determinó omitir el bicarbonato (cuyo pH es cercano a 9), evitando así la alteración del manto lipídico protector y previniendo la resequedad en usuarios de piel sensible.
+          </div>
+        </article>
+
+        <!-- 4. Conclusiones y Proyección -->
+        <article class="academic-card">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            4. Conclusiones del Proyecto
+          </h3>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1rem;">
+            El proyecto Golden Roast demuestra la viabilidad de transformar materias primas emblemáticas de Honduras —como el café y la miel pura— en propuestas de cosmética artesanal con valor agregado y alto atractivo visual.
+          </p>
+          <ul class="objective-list">
+            <li>La complementariedad del exfoliante y la crema hidratante conforma una rutina básica coherente de dos pasos (renovación e hidratación).</li>
+            <li>El diseño de marca e identidad visual fortalece la percepción de calidad, generando confianza en el consumidor.</li>
+            <li>La implementación de esta plataforma de comercio electrónico sienta las bases técnicas para una futura comercialización formal en el mercado hondureño.</li>
+          </ul>
+        </article>
+
+        <!-- 5. Equipo Emprendedor (Exactamente 4 en una fila) -->
+        <article class="academic-card" style="padding: 2.25rem 1.75rem;">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            5. Integrantes del Equipo Emprendedor
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+            Estudiantes universitarios que conceptualizaron la marca, formularon los prototipos botánicos y desarrollaron la propuesta comercial en Comayagua.
+          </p>
+
+          <div class="team-row-4">
+            <!-- 1. Joselin Cáceres (Femenino) -->
+            <div class="team-card-compact">
+              <div class="avatar-illustrated avatar-female-1">
+                <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="20" r="10" fill="#E8B298"/>
+                  <path d="M14 18C14 11 18 9 24 9C30 9 34 11 34 18C34 22 31 24 31 24C31 24 33 28 32 30C31 32 29 32 29 32C29 32 27 25 24 25C21 25 19 32 19 32C19 32 17 32 16 30C15 28 17 24 17 24C17 24 14 22 14 18Z" fill="#78350F"/>
+                  <path d="M12 42C12 34 17 31 24 31C31 31 36 34 36 42" fill="#D97706"/>
+                  <circle cx="21" cy="20" r="1.5" fill="#451A03"/>
+                  <circle cx="27" cy="20" r="1.5" fill="#451A03"/>
+                  <path d="M22 24C23 25 25 25 26 24" stroke="#451A03" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="team-name">Joselin Cáceres</div>
+              <div class="team-role">Formulación Botánica</div>
+              <p class="team-brief">Granulometría de café tostado, emoliencia y equilibrio de absorción dérmica.</p>
+            </div>
+
+            <!-- 2. Sofia López (Femenino) -->
+            <div class="team-card-compact">
+              <div class="avatar-illustrated avatar-female-2">
+                <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="19" r="9.5" fill="#F3C5A8"/>
+                  <circle cx="24" cy="9" r="6" fill="#1C1917"/>
+                  <path d="M15 19C15 12 19 11 24 11C29 11 33 12 33 19C33 22 31 24 31 24C29 23 27 21 24 21C21 21 19 23 17 24C17 24 15 22 15 19Z" fill="#1C1917"/>
+                  <path d="M13 42C13 33 18 30 24 30C30 30 35 33 35 42" fill="#B45309"/>
+                  <circle cx="21" cy="19" r="1.5" fill="#292524"/>
+                  <circle cx="27" cy="19" r="1.5" fill="#292524"/>
+                  <path d="M22 23C23 24 25 24 26 23" stroke="#292524" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="team-name">Sofia López</div>
+              <div class="team-role">Diseño & Marca</div>
+              <p class="team-brief">Imagotipo de gota y café, empaques cosméticos y estética editorial dorada.</p>
+            </div>
+
+            <!-- 3. Ángel Guerra (Masculino) -->
+            <div class="team-card-compact">
+              <div class="avatar-illustrated avatar-male-1">
+                <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="20" r="10" fill="#D29A78"/>
+                  <path d="M15 17C15 11 18 8 24 8C30 8 33 11 33 17C33 18 31 19 31 19C31 15 29 12 24 12C19 12 17 15 17 19C17 19 15 18 15 17Z" fill="#2E1B13"/>
+                  <path d="M12 42C12 33 17 31 24 31C31 31 36 33 36 42" fill="#1E3A8A"/>
+                  <circle cx="21" cy="19.5" r="1.5" fill="#1F130E"/>
+                  <circle cx="27" cy="19.5" r="1.5" fill="#1F130E"/>
+                  <path d="M22 25C23 26 25 26 26 25" stroke="#1F130E" stroke-width="1.3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="team-name">Ángel Guerra</div>
+              <div class="team-role">Estrategia Comercial</div>
+              <p class="team-brief">Estructura de costos unitarios en Lempiras y logística local en Comayagua.</p>
+            </div>
+
+            <!-- 4. Génesis López (Femenino) -->
+            <div class="team-card-compact">
+              <div class="avatar-illustrated avatar-female-3">
+                <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="19" r="9.5" fill="#E8B298"/>
+                  <path d="M14 20C14 11 18 8 24 8C30 8 34 11 34 20C34 28 32 32 30 33C29 27 28 22 24 22C20 22 19 27 18 33C16 32 14 28 14 20Z" fill="#581C87"/>
+                  <path d="M13 42C13 34 18 31 24 31C30 31 35 34 35 42" fill="#7E22CE"/>
+                  <circle cx="21" cy="19" r="1.5" fill="#3B0764"/>
+                  <circle cx="27" cy="19" r="1.5" fill="#3B0764"/>
+                  <path d="M22 23.5C23 24.5 25 24.5 26 23.5" stroke="#3B0764" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="team-name">Génesis López</div>
+              <div class="team-role">Calidad & Seguridad</div>
+              <p class="team-brief">Preservación del pH fisiológico cutáneo, inocuidad y protocolos de parche.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+    <!-- Footer (Enterprise Luxury Dark Acrylic & Social Hub) -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 1. Brand & Socials -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link" translate="no">
+            <img src="assets/img/logo.png" alt="Golden Roast Logo" class="brand-logo-img">
+            <div class="brand-text notranslate" translate="no">
+              <span class="brand-name notranslate" translate="no" style="color: #FFFFFF;">Golden<span style="color: var(--gold-pale);">Roast</span></span>
+              <span class="brand-slogan notranslate" translate="no" style="color: #FFE699;" data-i18n="brand.slogan">The Golden touch of nature</span>
+            </div>
+          </a>
+          <p data-i18n="footer.brand_desc">
+            Cosmética botánica artesanal inspirada en café tostado y miel pura de abeja. Iniciativa universitaria desarrollada en el Centro Regional UNAH-CURC en Comayagua.
+          </p>
+
+          <!-- Social Media Icons (Instagram, Facebook, TikTok, WhatsApp) -->
+          
+          <div class="footer-social-bar">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram de Golden Roast" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook de Golden Roast" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="TikTok de Golden Roast" title="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
+            </a>
+            <a href="https://wa.me/50499999999" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp de Atención Golden Roast" title="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.175.2-.351.226-.652.076-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.175-.3-.019-.463.132-.613.136-.134.301-.351.451-.527.151-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.631-.927-2.233-.244-.587-.492-.507-.676-.516l-.577-.01c-.2 0-.527.075-.802.376s-1.053 1.028-1.053 2.508 1.078 2.909 1.229 3.109c.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.175-1.43-.075-.125-.276-.2-.577-.35zm-5.42 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.866 11.866 0 0 0 5.713 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Navigation -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.nav_title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+            <li><a href="tienda.html" data-i18n="nav.shop">Tienda</a></li>
+            <li><a href="sobre-nosotros.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+            <li><a href="proyecto.html" data-i18n="nav.project">El Proyecto</a></li>
+            <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Collection -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.products_title">Colección</h4>
+          <ul class="footer-links">
+            <li><a href="producto-exfoliante.html" data-i18n="prod.scrub.name">Exfoliante de Café</a></li>
+            <li><a href="producto-hidratante.html" data-i18n="prod.cream.name">Crema Hidratante de Miel</a></li>
+            <li><a href="tienda.html" data-i18n="prod.bundle.name">Pack Golden Dúo</a></li>
+            <li><a href="tienda.html">Glow Botanical Elixir</a></li>
+            <li><a href="carrito.html" data-i18n="nav.cart">Bolsa de Compras</a></li>
+            <li><a href="cuenta.html" data-i18n="nav.account">Mi Cuenta</a></li>
+          </ul>
+        </div>
+
+        <!-- 4. Contact & Newsletter -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.contact_title">Contacto & Envíos</h4>
+          <p style="font-size: 0.875rem; margin-bottom: 0.6rem; color: #D1C5BD;">
+            Comayagua, Honduras (UNAH-CURC).
+          </p>
+          <p style="font-size: 0.85rem; margin-bottom: 1.25rem; color: #A89B92; line-height: 1.5;">
+            <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
+          </p>
+          <form id="newsletterForm" class="footer-newsletter-box">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar with Integrated Language Selector -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Golden Roast. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="politicas.html" data-i18n="footer.shipping_policy">Políticas y Envíos</a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="politicas.html#privacidad" data-i18n="footer.privacy">Aviso Legal</a>
+        </div>
+        <div class="footer-lang-container" id="footerLangMount">
+          <!-- Language switcher mounts cleanly here -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
