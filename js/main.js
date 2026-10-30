@@ -64,14 +64,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close on backdrop click
-  navBackdrop.addEventListener('click', closeMobileNav);
-
-  // Close on close button click inside mobile header
+  // Mobile Navigation Close Events (Rock-solid Click, Touch & Outside dismissal)
   const mobileCloseBtn = document.getElementById('mobileNavClose');
   if (mobileCloseBtn) {
-    mobileCloseBtn.addEventListener('click', closeMobileNav);
+    const handleClose = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      closeMobileNav();
+    };
+    mobileCloseBtn.addEventListener('click', handleClose);
+    mobileCloseBtn.addEventListener('touchend', handleClose, { passive: false });
   }
+
+  const handleBackdropClose = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    closeMobileNav();
+  };
+  navBackdrop.addEventListener('click', handleBackdropClose);
+  navBackdrop.addEventListener('touchend', handleBackdropClose, { passive: false });
+
+  // Click / touch outside to close drawer
+  document.addEventListener('click', (e) => {
+    if (mainNav && mainNav.classList.contains('active')) {
+      if (!mainNav.contains(e.target) && (!mobileToggle || !mobileToggle.contains(e.target))) {
+        closeMobileNav();
+      }
+    }
+  });
 
   // Close when clicking any nav link
   if (mainNav) {

@@ -658,10 +658,13 @@ class I18nEngine {
       toggleBtn.setAttribute('aria-expanded', isActive);
     });
 
-    closeBtn.addEventListener('click', () => {
+    const closePopover = (e) => {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
       popover.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', 'false');
-    });
+    };
+    closeBtn.addEventListener('click', closePopover);
+    closeBtn.addEventListener('touchend', closePopover, { passive: false });
 
     document.addEventListener('click', (e) => {
       if (!switcher.contains(e.target)) {
