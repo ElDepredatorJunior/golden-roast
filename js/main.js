@@ -26,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Mobile Navigation & Enterprise Off-Canvas Sidebar Controller
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const mainNav = document.getElementById('mainNav');
+
+  // Move drawer to document.body on mobile to break out of any header stacking contexts
+  if (mainNav && mainNav.parentNode !== document.body) {
+    document.body.appendChild(mainNav);
+  }
   
   // Ensure backdrop overlay exists
   let navBackdrop = document.querySelector('.nav-backdrop-overlay');
