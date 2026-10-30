@@ -40,11 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(navBackdrop);
   }
 
+  let scrollYPos = 0;
   const openMobileNav = () => {
     if (mainNav) {
+      scrollYPos = window.pageYOffset || document.documentElement.scrollTop || 0;
       mainNav.classList.add('active');
       navBackdrop.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('mobile-nav-open');
+      document.body.style.top = `-${scrollYPos}px`;
       if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
     }
   };
@@ -53,7 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mainNav) {
       mainNav.classList.remove('active');
       navBackdrop.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('mobile-nav-open');
+      document.body.style.top = '';
+      window.scrollTo(0, scrollYPos);
       if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
     }
   };
