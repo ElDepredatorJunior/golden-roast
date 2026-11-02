@@ -26,12 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Mobile Navigation & Enterprise Off-Canvas Sidebar Controller
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const mainNav = document.getElementById('mainNav');
+  const headerContainer = document.querySelector('.nav-container');
+  const navActions = document.querySelector('.nav-actions');
 
-  // Move drawer to document.body on mobile to break out of any header stacking contexts
-  if (mainNav && mainNav.parentNode !== document.body) {
-    document.body.appendChild(mainNav);
-  }
-  
   // Ensure backdrop overlay exists
   let navBackdrop = document.querySelector('.nav-backdrop-overlay');
   if (!navBackdrop) {
@@ -62,6 +59,33 @@ document.addEventListener('DOMContentLoaded', () => {
       if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
     }
   };
+
+  // Keep in header on desktop (> 992px) and move to body on mobile (<= 992px)
+  const mql = window.matchMedia('(max-width: 992px)');
+  const syncNavPlacement = () => {
+    if (!mainNav) return;
+    if (mql.matches) {
+      if (mainNav.parentNode !== document.body) {
+        document.body.appendChild(mainNav);
+      }
+    } else {
+      if (headerContainer && mainNav.parentNode !== headerContainer) {
+        if (navActions && navActions.parentNode === headerContainer) {
+          headerContainer.insertBefore(mainNav, navActions);
+        } else {
+          headerContainer.appendChild(mainNav);
+        }
+      }
+      closeMobileNav();
+    }
+  };
+
+  syncNavPlacement();
+  if (mql.addEventListener) {
+    mql.addEventListener('change', syncNavPlacement);
+  } else if (mql.addListener) {
+    mql.addListener(syncNavPlacement);
+  }
 
   if (mobileToggle) {
     mobileToggle.addEventListener('click', (e) => {
