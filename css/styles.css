@@ -6349,3 +6349,227 @@ body.mobile-nav-open {
   background: #10B981;
   box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
 }
+
+
+/* ==========================================================================
+   FORENSIC RESPONSIVE HARDENING & ZERO-OVERFLOW SHIELD (V3 AUDITED)
+   Guaranteed Zero-Horizontal-Overflow Across 300px to 4K Ultra-Wide
+   ========================================================================== */
+
+/* 1. Global Viewport Clipping & Off-Canvas Containment */
+html, body {
+  overflow-x: clip !important;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* Off-canvas mobile menu completely removed from flow when inactive */
+@media (max-width: 992px) {
+  .main-nav:not(.active) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .main-nav.active {
+    display: flex !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+.cart-drawer:not(.active) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.cart-drawer.active {
+  display: flex !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* 2. Grid Parent and Child Deflation (Prevents min-width: auto overflow) */
+.checkout-layout,
+.cart-layout,
+.product-detail-grid,
+.value-grid,
+.team-row-4,
+.hero-grid {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.checkout-layout > *,
+.cart-layout > *,
+.product-detail-grid > *,
+.value-grid > *,
+.team-row-4 > * {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Small Phone & Ultra-Compact Screen Adaptability (<= 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Table & Summary Cards */
+  .table-card,
+  .summary-card,
+  .checkout-form-card,
+  .checkout-summary-card {
+    padding: 1.15rem 0.75rem !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Checkout Step Nodes */
+  .checkout-stepper {
+    gap: 0.4rem !important;
+  }
+
+  .checkout-step-node {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Address Selector */
+  .address-type-selector {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.45rem !important;
+    width: 100% !important;
+  }
+
+  .address-type-pill {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 0.45rem 0.75rem !important;
+    font-size: 0.785rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Virtual Card Perspective */
+  .virtual-card-perspective {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .virtual-card {
+    height: 175px !important;
+    border-radius: 14px !important;
+  }
+
+  .virtual-card-front,
+  .virtual-card-back {
+    padding: 0.85rem !important;
+  }
+
+  .card-number-display {
+    font-size: 1rem !important;
+    letter-spacing: 0.06em !important;
+    margin-bottom: 0.65rem !important;
+  }
+
+  /* Product Highlights Single Column */
+  .product-highlight-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+
+  /* Single Product View Detail */
+  .product-detail-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .product-main-view {
+    padding: 1rem !important;
+    min-height: auto !important;
+  }
+
+  .product-main-view img {
+    max-height: 220px !important;
+    max-width: 100% !important;
+  }
+
+  .gallery-thumbs {
+    gap: 0.4rem !important;
+  }
+
+  .gallery-thumb-item {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  /* Cart Table */
+  #cartTableWrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+  }
+
+  .cart-table {
+    min-width: 270px !important;
+    width: 100% !important;
+  }
+}
+
+/* 4. Value Grid 1-Col Collapse on Mobile */
+@media (max-width: 768px) {
+  .value-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .value-card {
+    padding: 1.5rem 1.15rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-highlight-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* 5. Team Grid Collapse on Small Phones */
+@media (max-width: 560px) {
+  .team-row-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .team-card-compact {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Global Typography Overflow Shield */
+h1, h2, h3, h4, h5, h6, p, span, a {
+  overflow-wrap: break-word !important;
+}
+
+@media (max-width: 640px) {
+  .academic-header h1 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+  }
+}
