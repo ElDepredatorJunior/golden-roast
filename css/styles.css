@@ -5117,124 +5117,227 @@ html, body {
 }
 
 @media (max-width: 992px) {
-  /* On mobile/tablet: main-nav is strictly hidden until opened */
+  /* ==========================================================================
+     UNIFIED OBSIDIAN & CHAMPAGNE GOLD MOBILE OFF-CANVAS DRAWER
+     ========================================================================== */
   .main-nav {
-    display: none !important;
+    display: flex !important;
     position: fixed !important;
     top: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    width: 310px !important;
-    max-width: 85vw !important;
+    left: auto !important;
+    width: 320px !important;
+    max-width: 86vw !important;
     height: 100vh !important;
     height: 100dvh !important;
-    background: #FFFFFF !important;
+    min-height: 100% !important;
+    background: linear-gradient(180deg, #18110D 0%, #110B08 55%, #0B0604 100%) !important;
     z-index: 99999 !important;
-    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.3) !important;
-    border-left: 1px solid rgba(220, 205, 185, 0.55) !important;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.9) !important;
+    border-left: 1px solid rgba(201, 151, 40, 0.3) !important;
     padding: 0 !important;
     margin: 0 !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    transform: translateX(105%) !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
   }
 
   .main-nav.active {
-    display: flex !important;
-    animation: drawerSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-  }
-
-  @keyframes drawerSlideIn {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   .mobile-nav-header {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 1.25rem 1.25rem 1rem !important;
-    padding-top: max(1.25rem, env(safe-area-inset-top, 24px)) !important;
-    border-bottom: 1px solid rgba(220, 205, 185, 0.45) !important;
-    background: #FAF6F0 !important;
+    padding: 1.35rem 1.35rem 1.15rem !important;
+    padding-top: max(1.35rem, env(safe-area-inset-top, 24px)) !important;
+    border-bottom: 1px solid rgba(201, 151, 40, 0.2) !important;
+    background: rgba(24, 17, 13, 0.98) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 10 !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .mobile-nav-header .brand-name {
+    color: #FFFFFF !important;
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .mobile-nav-header .brand-name span {
+    color: #ECC870 !important;
   }
 
   .mobile-nav-close {
-    min-width: 44px !important;
-    min-height: 44px !important;
-    width: 44px !important;
-    height: 44px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: #FFFFFF !important;
-    border: 1.5px solid var(--gold-primary) !important;
-    color: var(--coffee-deep) !important;
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(201, 151, 40, 0.35) !important;
+    color: #ECC870 !important;
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
     cursor: pointer !important;
     touch-action: manipulation !important;
     line-height: 1 !important;
+    transition: all 0.25s ease !important;
   }
 
-  .nav-links {
-    padding: 1.25rem !important;
+  .mobile-nav-close:hover,
+  .mobile-nav-close:active {
+    background: linear-gradient(135deg, #ECC870, #C99728) !important;
+    border-color: transparent !important;
+    color: #0E0907 !important;
+    transform: rotate(90deg) scale(1.06) !important;
+    box-shadow: 0 4px 16px rgba(201, 151, 40, 0.35) !important;
+  }
+
+  .main-nav .nav-links {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 1.35rem 1.15rem !important;
+    display: flex !important;
     flex-direction: column !important;
     gap: 0.65rem !important;
     background: transparent !important;
     border: none !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
-    width: 100% !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    margin: 0 !important;
+    list-style: none !important;
   }
 
-  .nav-item {
+  .main-nav .nav-item {
     width: 100% !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  .nav-item a {
+  .main-nav .nav-item a {
     width: 100% !important;
-    padding: 0.95rem 1.15rem !important;
-    font-size: 1rem !important;
+    padding: 0.95rem 1.2rem !important;
+    font-size: 0.98rem !important;
     font-weight: 600 !important;
-    border-radius: 14px !important;
-    background: rgba(250, 246, 240, 0.75) !important;
-    border: 1px solid rgba(220, 205, 185, 0.4) !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    color: #ECE4DC !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.85rem !important;
+    gap: 0.9rem !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
-  .nav-item a.active {
-    background: #FFFFFF !important;
-    border-color: var(--gold-primary) !important;
-    box-shadow: 0 4px 16px rgba(197, 147, 35, 0.2) !important;
-    color: var(--gold-hover) !important;
+  .main-nav .nav-item a .nav-icon {
+    display: inline-block !important;
+    width: 18px !important;
+    height: 18px !important;
+    stroke: #ECC870 !important;
+    color: #ECC870 !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.2s ease !important;
   }
 
-  .mobile-nav-footer {
+  .main-nav .nav-item a:hover {
+    background: rgba(201, 151, 40, 0.12) !important;
+    border-color: rgba(201, 151, 40, 0.45) !important;
+    color: #FFF8E8 !important;
+    transform: translateX(4px) !important;
+  }
+
+  .main-nav .nav-item a:hover .nav-icon {
+    transform: scale(1.15) !important;
+  }
+
+  .main-nav .nav-item a.active {
+    background: linear-gradient(135deg, rgba(201, 151, 40, 0.24) 0%, rgba(201, 151, 40, 0.08) 100%) !important;
+    border-color: #ECC870 !important;
+    box-shadow: 0 4px 18px rgba(201, 151, 40, 0.2) !important;
+    color: #FFE699 !important;
+    font-weight: 700 !important;
+  }
+
+  .main-nav .nav-item a.active .nav-icon {
+    stroke: #FFE699 !important;
+    filter: drop-shadow(0 0 6px rgba(255, 230, 153, 0.5)) !important;
+  }
+
+  .main-nav .mobile-nav-footer {
     display: flex !important;
-    padding: 1.25rem !important;
-    padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 24px)) !important;
-    border-top: 1px solid rgba(220, 205, 185, 0.45) !important;
-    background: #FAF6F0 !important;
+    padding: 1.35rem 1.15rem !important;
+    padding-bottom: max(1.35rem, env(safe-area-inset-bottom, 24px)) !important;
+    border-top: 1px solid rgba(201, 151, 40, 0.2) !important;
+    background: rgba(14, 9, 7, 0.98) !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    flex-shrink: 0 !important;
+    margin-top: auto !important;
+    border-radius: 0 !important;
+  }
+
+  .main-nav .mobile-nav-footer .nav-account-btn {
+    background: linear-gradient(135deg, #ECC870 0%, #C99728 100%) !important;
+    color: #120C08 !important;
+    font-weight: 700 !important;
+    border-radius: 9999px !important;
+    border: none !important;
+    padding: 0.9rem 1.25rem !important;
+    box-shadow: 0 6px 20px rgba(201, 151, 40, 0.32) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+  }
+
+  .main-nav .mobile-nav-footer .nav-account-btn svg {
+    stroke: #120C08 !important;
+  }
+
+  .main-nav .mobile-nav-footer .nav-account-btn:active {
+    transform: scale(0.97) !important;
   }
 
   .nav-backdrop-overlay {
     position: fixed !important;
     inset: 0 !important;
-    background: rgba(31, 19, 14, 0.6) !important;
-    backdrop-filter: blur(4px) !important;
-    -webkit-backdrop-filter: blur(4px) !important;
+    width: 100vw !important;
+    height: 100% !important;
+    height: 100dvh !important;
+    background: rgba(8, 5, 3, 0.78) !important;
+    backdrop-filter: blur(8px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(180%) !important;
     z-index: 99998 !important;
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transition: opacity 0.25s ease, visibility 0.25s ease !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
   }
 
   .nav-backdrop-overlay.active {
@@ -5242,6 +5345,7 @@ html, body {
     visibility: visible !important;
     pointer-events: auto !important;
   }
+
 }
 
 
@@ -5256,94 +5360,7 @@ body.mobile-nav-open {
   height: 100% !important;
 }
 
-@media (max-width: 992px) {
-  .main-nav {
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    left: auto !important;
-    width: 320px !important;
-    max-width: 86vw !important;
-    height: 100% !important;
-    height: 100dvh !important;
-    min-height: 100% !important;
-    background: #FFFFFF !important;
-    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.35) !important;
-    z-index: 99999 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    transform: translateX(105%) !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease !important;
-    overflow: hidden !important;
-    border-left: 1px solid rgba(220, 205, 185, 0.45) !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .main-nav.active {
-    transform: translateX(0) !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
-  .mobile-nav-header {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 1.25rem 1.25rem 1rem !important;
-    padding-top: max(1.25rem, env(safe-area-inset-top, 24px)) !important;
-    background: #FAF6F0 !important;
-    border-bottom: 1px solid rgba(220, 205, 185, 0.45) !important;
-    flex-shrink: 0 !important;
-  }
-
-  .nav-links {
-    flex: 1 1 auto !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding: 1.25rem !important;
-    gap: 0.65rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    list-style: none !important;
-    margin: 0 !important;
-    background: #FFFFFF !important;
-  }
-
-  .mobile-nav-footer {
-    padding: 1.25rem !important;
-    padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 24px)) !important;
-    background: #FAF6F0 !important;
-    border-top: 1px solid rgba(220, 205, 185, 0.45) !important;
-    flex-shrink: 0 !important;
-    margin-top: auto !important;
-  }
-
-  .nav-backdrop-overlay {
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100vw !important;
-    height: 100% !important;
-    height: 100dvh !important;
-    background: rgba(15, 10, 8, 0.68) !important;
-    backdrop-filter: blur(6px) !important;
-    -webkit-backdrop-filter: blur(6px) !important;
-    z-index: 99998 !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transition: opacity 0.3s ease, visibility 0.3s ease !important;
-  }
-
-  .nav-backdrop-overlay.active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-}
+/* Mobile nav drawer unified in primary mobile media query */
 
 
 /* ==========================================================================
@@ -6118,45 +6135,7 @@ body.mobile-nav-open {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   }
 
-  /* Mobile Drawer Polish */
-  .main-nav {
-    background: rgba(13, 14, 19, 0.96) !important;
-    backdrop-filter: blur(36px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
-    border-left: 1px solid rgba(201, 151, 40, 0.3) !important;
-    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5) !important;
-    color: #FFFFFF !important;
-  }
-
-  .main-nav .brand-name {
-    color: #FFFFFF !important;
-  }
-
-  .main-nav .mobile-nav-close {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(201, 151, 40, 0.25) !important;
-    color: #FFFFFF !important;
-  }
-
-  .main-nav .nav-links a {
-    color: rgba(255, 255, 255, 0.78) !important;
-    padding: 0.9rem 1.15rem !important;
-    border-radius: 14px !important;
-    transition: all 0.25s ease !important;
-  }
-
-  .main-nav .nav-links a:hover,
-  .main-nav .nav-links a.active {
-    background: rgba(201, 151, 40, 0.16) !important;
-    color: #ECC870 !important;
-    border-left: 3px solid #C99728 !important;
-  }
-
-  .main-nav .nav-account-btn {
-    background: linear-gradient(135deg, rgba(201, 151, 40, 0.2), rgba(201, 151, 40, 0.08)) !important;
-    border: 1px solid rgba(201, 151, 40, 0.35) !important;
-    color: #ECC870 !important;
-  }
+  /* Mobile drawer polish handled by unified mobile rules */
 }
 
 

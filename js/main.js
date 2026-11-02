@@ -270,6 +270,20 @@ document.addEventListener('DOMContentLoaded', () => {
     '</button>';
     document.body.appendChild(dock);
 
+    // Ensure cart drawer opens when clicking dock cart button
+    const dockCartBtn = dock.querySelector('.dock-cart');
+    if (dockCartBtn) {
+      dockCartBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (window.cartManager && typeof window.cartManager.openDrawer === 'function') {
+          window.cartManager.openDrawer();
+        } else {
+          window.location.href = 'carrito.html';
+        }
+      });
+    }
+
     if (window.cartManager && typeof window.cartManager.updateBadges === 'function') {
       window.cartManager.updateBadges();
     }
