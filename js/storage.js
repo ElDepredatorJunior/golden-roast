@@ -99,7 +99,7 @@ class GoldenStorage {
     }
   }
 
-  // Language: Default is Spanish ('es') as required
+  // Language: Default is English ('en') as required
   getLanguage() {
     return this.get('lang', 'en');
   }

@@ -251,22 +251,22 @@ document.addEventListener('DOMContentLoaded', () => {
     dock.setAttribute('aria-label', 'Navegación Rápida Móvil');
     dock.innerHTML = '<a href="index.html" class="dock-item ' + (isHome ? 'active' : '') + '">' +
       '<svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' +
-      '<span>Inicio</span>' +
+      '<span data-i18n="nav.home">Home</span>' +
     '</a>' +
     '<a href="tienda.html" class="dock-item ' + (isShop ? 'active' : '') + '">' +
       '<svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>' +
-      '<span>Tienda</span>' +
+      '<span data-i18n="nav.shop">Shop</span>' +
     '</a>' +
-    '<a href="https://wa.me/50499208330?text=Hola%20Golden%20Roast%2C%20quisiera%20hacer%20un%20pedido%20de%20sus%20productos." target="_blank" rel="noopener" class="dock-item dock-whatsapp" aria-label="WhatsApp Directo">' +
+    '<a href="https://wa.me/50499208330?text=Hello%20Golden%20Roast%2C%20I%20would%20like%20to%20order%20your%20skincare%20products." target="_blank" rel="noopener" class="dock-item dock-whatsapp" aria-label="WhatsApp Directo">' +
       '<svg class="dock-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.311.045-.698.077-2.222-.553-1.822-.754-2.986-2.616-3.076-2.736-.089-.12-1.385-1.846-1.385-3.52 0-1.674.87-2.497 1.179-2.842.144-.162.38-.234.607-.234.195 0 .363.007.518.016.166.01.39-.063.607.458.228.549.778 1.902.847 2.042.068.14.114.305.023.487-.091.182-.136.295-.272.457-.136.163-.287.363-.41.488-.137.139-.28.29-.12.568.159.278.706 1.168 1.517 1.892 1.043.931 1.923 1.22 2.196 1.356.273.136.432.114.591-.068.159-.182.682-.796.864-1.069.182-.273.364-.227.614-.136.25.091 1.591.751 1.864.887.273.136.455.205.523.319.068.114.068.659-.076 1.064z"/></svg>' +
       '<span>WhatsApp</span>' +
     '</a>' +
-    '<button type="button" class="dock-item dock-cart btn-cart-nav" aria-label="Abrir Bolsa de Compras">' +
+    '<button type="button" class="dock-item dock-cart btn-cart-nav" aria-label="Open Shopping Bag">' +
       '<div class="dock-cart-badge-wrap">' +
         '<svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>' +
         '<span class="cart-badge">0</span>' +
       '</div>' +
-      '<span>Bolsa</span>' +
+      '<span data-i18n="nav.cart">Bag</span>' +
     '</button>';
     document.body.appendChild(dock);
 
@@ -300,12 +300,14 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           await navigator.clipboard.writeText(link);
           const labelSpan = btn.querySelector('span');
-          const origText = labelSpan ? labelSpan.textContent : 'Copiar';
-          if (labelSpan) labelSpan.textContent = '¡Copiado!';
+          const const isEs = window.i18n && window.i18n.currentLang === 'es';
+          origText = labelSpan ? labelSpan.textContent : (isEs ? 'Copiar' : 'Copy');
+          if (labelSpan) labelSpan.textContent = isEs ? '¡Copiado!' : 'Copied!';
           btn.style.borderColor = '#10B981';
           btn.style.color = '#10B981';
           if (window.cartManager && typeof window.cartManager.showToast === 'function') {
-            window.cartManager.showToast('Enlace copiado al portapapeles');
+            const toastMsg = (window.i18n && window.i18n.currentLang === 'es') ? 'Enlace copiado al portapapeles' : 'Link copied to clipboard';
+            window.cartManager.showToast(toastMsg);
           }
           setTimeout(() => {
             if (labelSpan) labelSpan.textContent = origText;
