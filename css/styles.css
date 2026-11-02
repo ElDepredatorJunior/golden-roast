@@ -168,27 +168,14 @@ button, input, select, textarea {
    Brand Preloader
    ========================================================================== */
 .site-preloader {
-  animation: preloaderFailsafeDismiss 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  position: fixed;
-  inset: 0;
-  background: #FAF6F0;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-@keyframes preloaderFailsafeDismiss {
-  0%, 75% { opacity: 1; visibility: visible; }
-  100% { opacity: 0; visibility: hidden; pointer-events: none; }
-}
-
-.site-preloader.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 
 .preloader-drop {
