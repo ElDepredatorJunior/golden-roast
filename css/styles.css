@@ -5340,3 +5340,477 @@ body.mobile-nav-open {
     pointer-events: auto !important;
   }
 }
+
+
+/* ==========================================================================
+   LUXURY SOCIAL & CONTACT HUB (Interactive Animated Showcase)
+   ========================================================================== */
+.social-hub-section {
+  position: relative;
+  padding: 5.5rem 0;
+  background: linear-gradient(180deg, #F9F5EF 0%, #FFFFFF 50%, #F5EFE6 100%);
+  border-top: 1px solid rgba(197, 147, 35, 0.2);
+  border-bottom: 1px solid rgba(197, 147, 35, 0.15);
+  overflow: hidden;
+}
+
+.social-hub-glow-1 {
+  position: absolute;
+  top: -80px;
+  left: 8%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(229, 168, 46, 0.14) 0%, rgba(229, 168, 46, 0) 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  animation: floatGlow 12s ease-in-out infinite alternate;
+}
+
+.social-hub-glow-2 {
+  position: absolute;
+  bottom: -80px;
+  right: 8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(197, 147, 35, 0.12) 0%, rgba(197, 147, 35, 0) 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: floatGlow 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(35px) scale(1.08); }
+}
+
+.hub-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(197, 147, 35, 0.12);
+  border: 1px solid rgba(197, 147, 35, 0.3);
+  color: #9E7012;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 2px 10px rgba(197, 147, 35, 0.08);
+}
+
+.hub-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.1rem, 3.6vw, 2.85rem);
+  color: #1F130E;
+  margin: 0.25rem 0 0.85rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hub-title span {
+  background: linear-gradient(135deg, #C59323 0%, #E5A82E 50%, #9E7012 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hub-subtitle {
+  color: #7D6B60;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* 3-Column Luxury Cards Grid */
+.hub-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+}
+
+/* Individual Luxury Card */
+.hub-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(220, 205, 185, 0.65);
+  border-radius: 28px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 12px 35px rgba(31, 19, 14, 0.04), 0 2px 6px rgba(31, 19, 14, 0.02);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  overflow: hidden;
+}
+
+.hub-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(197, 147, 35, 0.4), rgba(255, 255, 255, 0) 50%, rgba(197, 147, 35, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(44, 27, 14, 0.1), 0 0 35px rgba(197, 147, 35, 0.12);
+  border-color: rgba(197, 147, 35, 0.5);
+}
+
+.hub-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Header */
+.hub-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.hub-icon-pill {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.hub-card:hover .hub-icon-pill {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.hub-icon-tiktok {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+.hub-icon-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: #FFFFFF;
+}
+
+.hub-icon-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+}
+
+.hub-card-title-group h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: #1F130E;
+  margin: 0;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hub-verified-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-size: 10px;
+}
+
+.hub-card-tag {
+  font-size: 0.88rem;
+  color: #C59323;
+  font-weight: 700;
+  display: block;
+  margin-top: 3px;
+}
+
+/* QR Code Interactive Frame with Scanning Beam */
+.hub-qr-frame {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto 1.25rem;
+  border-radius: 20px;
+  background: #FAF6F0;
+  padding: 8px;
+  border: 1px solid rgba(220, 205, 185, 0.8);
+  box-shadow: inset 0 2px 6px rgba(31, 19, 14, 0.04), 0 8px 24px rgba(31, 19, 14, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hub-qr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.hub-card:hover .hub-qr-img {
+  transform: scale(1.04);
+}
+
+/* Animated Scanning Laser Beam */
+.hub-scan-beam {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #E5A82E, #FFF, #E5A82E, transparent);
+  box-shadow: 0 0 12px 3px rgba(229, 168, 46, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  animation: scanBeamLoop 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scanBeamLoop {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.hub-qr-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #8E7B70;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hub-qr-hint svg {
+  color: #C59323;
+}
+
+/* WhatsApp / Direct Contact Card Elements */
+.hub-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  color: #15803D;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.hub-live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: liveBeacon 2s infinite;
+}
+
+@keyframes liveBeacon {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.hub-phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.hub-phone-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.15rem;
+  background: #FAF6F0;
+  border: 1px solid rgba(220, 205, 185, 0.7);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.hub-phone-row:hover {
+  background: #FFFFFF;
+  border-color: #22C55E;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.12);
+  transform: translateX(3px);
+}
+
+.hub-phone-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-phone-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8E7B70;
+  font-weight: 700;
+}
+
+.hub-phone-number {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1F130E;
+  letter-spacing: -0.01em;
+}
+
+.hub-phone-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hub-action-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hub-action-icon-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.08);
+}
+
+.btn-wa-green {
+  background: #25D366;
+}
+
+.btn-call-gold {
+  background: linear-gradient(135deg, #C59323 0%, #E5A82E 100%);
+}
+
+/* Quick Order Chips */
+.hub-quick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.hub-chip-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: #FAF6F0;
+  border: 1px solid rgba(220, 205, 185, 0.7);
+  color: #5A483E;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hub-chip-btn:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.25);
+}
+
+/* Primary CTA Button for Cards */
+.hub-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: auto;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+}
+
+.btn-dark-tiktok {
+  background: #000000;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-dark-tiktok:hover {
+  background: #1F130E;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-sunset-instagram {
+  background: linear-gradient(135deg, #d6249f 0%, #fd5949 50%, #fdf497 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(214, 36, 159, 0.2);
+}
+
+.btn-sunset-instagram:hover {
+  filter: brightness(1.08);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(214, 36, 159, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-emerald-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+}
+
+.btn-emerald-whatsapp:hover {
+  filter: brightness(1.08);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
