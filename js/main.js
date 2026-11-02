@@ -300,8 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           await navigator.clipboard.writeText(link);
           const labelSpan = btn.querySelector('span');
-          const const isEs = window.i18n && window.i18n.currentLang === 'es';
-          origText = labelSpan ? labelSpan.textContent : (isEs ? 'Copiar' : 'Copy');
+          const isEs = window.i18n && window.i18n.currentLang === 'es';
+          const origText = labelSpan ? labelSpan.textContent : (isEs ? 'Copiar' : 'Copy');
           if (labelSpan) labelSpan.textContent = isEs ? '¡Copiado!' : 'Copied!';
           btn.style.borderColor = '#10B981';
           btn.style.color = '#10B981';
