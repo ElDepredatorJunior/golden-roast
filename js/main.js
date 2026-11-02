@@ -9,17 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('sitePreloader');
   if (preloader) {
     const hidePreloader = () => {
-      preloader.classList.add('fade-out');
+      preloader.classList.add('dismissed');
       setTimeout(() => {
         if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
-      }, 500);
+      }, 450);
     };
 
     if (document.readyState === 'complete') {
       setTimeout(hidePreloader, 350);
     } else {
       window.addEventListener('load', () => setTimeout(hidePreloader, 350));
-      setTimeout(hidePreloader, 1200); // safety fallback
+      setTimeout(hidePreloader, 950);
     }
   }
 

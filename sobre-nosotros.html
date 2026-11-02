@@ -7,12 +7,56 @@
   <title>About Us | Golden Roast - Botanical Philosophy & Heritage</title>
   <meta name="description" content="Conoce los orígenes, filosofía botánica, integrantes y la arquitectura de desarrollo detrás de Golden Roast.">
   <link rel="icon" type="image/png" href="assets/img/logo.png">
-  <link rel="stylesheet" href="css/styles.css?v=2.2.1">
+  <link rel="stylesheet" href="css/styles.css?v=2.2.2">
   </head>
 <body>
 
+  <!-- Ultra-Luxury Obsidian & Champagne Gold Preloader -->
+  <div class="site-preloader" id="sitePreloader" aria-hidden="true">
+    <div class="preloader-backdrop-glow"></div>
+    <div class="preloader-content">
+      <div class="preloader-symbol-wrap">
+        <svg class="preloader-ring-svg" viewBox="0 0 100 100" width="86" height="86">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(197, 147, 35, 0.15)" stroke-width="2.5" />
+          <circle cx="50" cy="50" r="42" fill="none" stroke="url(#preloaderGoldGrad)" stroke-width="2.5" stroke-dasharray="264" stroke-dashoffset="60" stroke-linecap="round" />
+          <defs>
+            <linearGradient id="preloaderGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFE699" />
+              <stop offset="50%" stop-color="#ECC870" />
+              <stop offset="100%" stop-color="#C99728" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <img src="assets/img/logo.png" alt="Golden Roast" class="preloader-brand-logo">
+      </div>
+      <div class="preloader-title">Golden<span>Roast</span></div>
+      <div class="preloader-tagline" data-i18n="brand.slogan">The Golden touch of nature</div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      function dismissPreloader(){
+        var p = document.getElementById('sitePreloader');
+        if (p && !p.classList.contains('dismissed')) {
+          p.classList.add('dismissed');
+          setTimeout(function(){ if(p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+        }
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(dismissPreloader, 350);
+      } else {
+        window.addEventListener('load', function(){ setTimeout(dismissPreloader, 350); });
+        setTimeout(dismissPreloader, 1000); // 1.0s maximum guarantee
+      }
+    })();
+  </script>
 
-  <!-- Brand Preloader Disabled (Instant Load) -->
+
+
+  
 
       <!-- Header (Apple Human Interface × Windows 11 Fluent Acrylic) -->
   <header class="main-header">
@@ -251,10 +295,10 @@
     </div>
   </footer>
 
-  <script src="js/storage.js?v=2.2.1"></script>
-  <script src="js/i18n.js?v=2.2.1"></script>
-  <script src="js/auth.js?v=2.2.1"></script>
-  <script src="js/carrito.js?v=2.2.1"></script>
-  <script src="js/main.js?v=2.2.1"></script>
+  <script src="js/storage.js?v=2.2.2"></script>
+  <script src="js/i18n.js?v=2.2.2"></script>
+  <script src="js/auth.js?v=2.2.2"></script>
+  <script src="js/carrito.js?v=2.2.2"></script>
+  <script src="js/main.js?v=2.2.2"></script>
 </body>
 </html>
