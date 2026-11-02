@@ -141,12 +141,14 @@ class CartManager {
       return;
     }
 
+    const cleanQty = Math.max(1, Math.min(99, Math.floor(Number(quantity)) || 1));
     const lang = window.i18n ? window.i18n.currentLang : 'en';
     const prodName = lang === 'es' ? (product.name_es || product.name) : product.name;
 
     const existingIndex = this.cart.findIndex(item => item.id === productId);
     if (existingIndex > -1) {
-      this.cart[existingIndex].quantity += quantity;
+      this.cart[existingIndex].quantity = Math.min(99, Math.max(1, (Math.floor(Number(this.cart[existingIndex].quantity)) || 1) + cleanQty));
+      this.cart[existingIndex].price = product.price; // Enforce canonical catalog price
     } else {
       this.cart.push({
         id: product.id,
@@ -155,7 +157,7 @@ class CartManager {
         price: product.price,
         image: product.image,
         url: product.url,
-        quantity: quantity
+        quantity: cleanQty
       });
     }
 
@@ -169,10 +171,17 @@ class CartManager {
     const item = this.cart.find(item => item.id === productId);
     if (!item) return;
 
-    item.quantity += delta;
-    if (item.quantity <= 0) {
+    const cleanDelta = Math.floor(Number(delta)) || 0;
+    const curQty = Math.floor(Number(item.quantity)) || 1;
+    const newQty = curQty + cleanDelta;
+
+    if (newQty <= 0) {
       this.removeItem(productId);
     } else {
+      item.quantity = Math.min(99, newQty);
+      if (typeof GOLDEN_ROAST_PRODUCTS !== 'undefined' && GOLDEN_ROAST_PRODUCTS[item.id]) {
+        item.price = GOLDEN_ROAST_PRODUCTS[item.id].price;
+      }
       this.saveCart();
     }
   }
@@ -474,6 +483,7 @@ class CartManager {
     const deliveryText = document.getElementById('deliveryProgressText');
     const discountRow = document.getElementById('summaryDiscountRow');
     const discountEl = document.getElementById('summaryDiscount');
+    const totalEl = document.getElementById('summaryTotal');
 
     if (!tableBody) return;
 
@@ -486,6 +496,7 @@ class CartManager {
       if (deliveryEl) deliveryEl.textContent = 'L 0.00';
       if (deliveryBar) deliveryBar.style.width = '0%';
       if (discountRow) discountRow.style.display = 'none';
+      if (totalEl) totalEl.textContent = 'L 0.00';
       return;
     }
 
@@ -534,6 +545,7 @@ class CartManager {
     const totals = this.storage ? this.storage.calculateTotals() : { subtotal: this.getSubtotal(), discount: 0, delivery: (this.getSubtotal() >= 300 ? 0 : 40), total: 0 };
     if (subtotalEl) subtotalEl.textContent = `L ${totals.subtotal.toFixed(2)}`;
     if (deliveryEl) deliveryEl.textContent = totals.delivery === 0 ? (lang === 'es' ? '¡Gratis!' : 'Free!') : `L ${totals.delivery.toFixed(2)}`;
+    if (totalEl) totalEl.textContent = `L ${totals.total.toFixed(2)}`;
     
     if (discountRow && discountEl) {
       if (totals.discount > 0) {
@@ -566,7 +578,7 @@ class CartManager {
         e.preventDefault();
         const code = couponInput.value.trim().toUpperCase();
         if (code === 'GOLDEN10') {
-          if (this.storage) this.storage.setDiscount(0.10);
+          if (this.storage) this.storage.set('coupon', 'GOLDEN10');
           if (couponFeedback) {
             couponFeedback.style.color = '#15803d';
             couponFeedback.textContent = lang === 'es' ? '✓ ¡Cupón GOLDEN10 aplicado! (10% OFF)' : '✓ Coupon GOLDEN10 applied! (10% OFF)';

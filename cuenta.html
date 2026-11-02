@@ -138,7 +138,7 @@
           <!-- Form: Login -->
           <form id="loginForm">
             <div class="fluent-input-group">
-              <label class="fluent-input-label" data-i18n="auth.label_email">Correo Electrónico</label>
+              <label class="fluent-input-label" for="loginEmail" data-i18n="auth.label_email">Correo Electrónico</label>
               <div class="fluent-input-wrapper">
                 <input type="email" id="loginEmail" required placeholder="nombre@ejemplo.com" autocomplete="email">
                 <span class="fluent-input-icon">
@@ -149,7 +149,7 @@
 
             <div class="fluent-input-group" style="margin-bottom: 1.75rem;">
               <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <label class="fluent-input-label" data-i18n="auth.label_password">Contraseña</label>
+                <label class="fluent-input-label" for="loginPassword" data-i18n="auth.label_password">Contraseña</label>
                 <span style="font-size: 0.8rem; color: var(--gold-hover); cursor: pointer;" onclick="alert('Si necesitas ayuda para acceder a tu cuenta, contáctanos desde la sección de Contacto.')" data-i18n="auth.help">Ayuda</span>
               </div>
               <div class="fluent-input-wrapper">
@@ -169,7 +169,7 @@
           <!-- Form: Register -->
           <form id="registerForm" style="display: none;">
             <div class="fluent-input-group">
-              <label class="fluent-input-label" data-i18n="auth.label_name">Nombre Completo</label>
+              <label class="fluent-input-label" for="regName" data-i18n="auth.label_name">Nombre Completo</label>
               <div class="fluent-input-wrapper">
                 <input type="text" id="regName" required placeholder="Elena Morales">
                 <span class="fluent-input-icon">
@@ -179,7 +179,7 @@
             </div>
 
             <div class="fluent-input-group">
-              <label class="fluent-input-label" data-i18n="auth.label_phone">Teléfono / WhatsApp</label>
+              <label class="fluent-input-label" for="regPhone" data-i18n="auth.label_phone">Teléfono / WhatsApp</label>
               <div class="fluent-input-wrapper">
                 <input type="tel" id="regPhone" required placeholder="+504 9876-5432">
                 <span class="fluent-input-icon">
@@ -189,7 +189,7 @@
             </div>
 
             <div class="fluent-input-group">
-              <label class="fluent-input-label" data-i18n="auth.label_email">Correo Electrónico</label>
+              <label class="fluent-input-label" for="regEmail" data-i18n="auth.label_email">Correo Electrónico</label>
               <div class="fluent-input-wrapper">
                 <input type="email" id="regEmail" required placeholder="elena@ejemplo.com">
                 <span class="fluent-input-icon">
@@ -199,7 +199,7 @@
             </div>
 
             <div class="fluent-input-group" style="margin-bottom: 1.75rem;">
-              <label class="fluent-input-label" data-i18n="auth.label_password_reg">Contraseña (mín. 6 caracteres)</label>
+              <label class="fluent-input-label" for="regPassword" data-i18n="auth.label_password_reg">Contraseña (mín. 6 caracteres)</label>
               <div class="fluent-input-wrapper">
                 <input type="password" id="regPassword" required minlength="6" placeholder="••••••••">
                 <span class="fluent-input-icon">
@@ -332,7 +332,7 @@
             <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
           </p>
           <form id="newsletterForm" class="footer-newsletter-box">
-            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder" aria-label="Tu correo electrónico para el boletín">
             <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
           </form>
         </div>

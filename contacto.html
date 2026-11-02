@@ -133,17 +133,17 @@
 
           <form id="contactForm">
             <div class="form-group">
-              <label class="form-label" data-i18n="contact.name_label">Nombre Completo *</label>
+              <label class="form-label" for="contactName" data-i18n="contact.name_label">Nombre Completo *</label>
               <input type="text" id="contactName" required class="form-control" placeholder="Tu Nombre" data-i18n-placeholder="contact.name_placeholder">
             </div>
 
             <div class="form-group">
-              <label class="form-label" data-i18n="contact.email_label">Correo Electrónico *</label>
+              <label class="form-label" for="contactEmail" data-i18n="contact.email_label">Correo Electrónico *</label>
               <input type="email" id="contactEmail" required class="form-control" placeholder="tu@correo.com" data-i18n-placeholder="contact.email_placeholder">
             </div>
 
             <div class="form-group">
-              <label class="form-label" data-i18n="contact.subject_label">Asunto</label>
+              <label class="form-label" for="contactSubject" data-i18n="contact.subject_label">Asunto</label>
               <select id="contactSubject" class="form-control">
                 <option value="pedidos" data-i18n="contact.subject_orders">Consulta sobre Pedidos y Entregas en Comayagua</option>
                 <option value="productos" data-i18n="contact.subject_products">Dudas sobre Ingredientes y Formulaciones</option>
@@ -153,7 +153,7 @@
             </div>
 
             <div class="form-group" style="margin-bottom: 1.75rem;">
-              <label class="form-label" data-i18n="contact.message_label">Mensaje *</label>
+              <label class="form-label" for="contactMessage" data-i18n="contact.message_label">Mensaje *</label>
               <textarea id="contactMessage" required rows="4" class="form-control" placeholder="Escribe aquí tu consulta o comentario..." data-i18n-placeholder="contact.message_placeholder"></textarea>
             </div>
 
@@ -482,7 +482,7 @@
             <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
           </p>
           <form id="newsletterForm" class="footer-newsletter-box">
-            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder" aria-label="Tu correo electrónico para el boletín">
             <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
           </form>
         </div>

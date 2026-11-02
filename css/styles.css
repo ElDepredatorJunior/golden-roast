@@ -6573,3 +6573,122 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
   }
 }
+
+/* ==========================================================================
+   FORENSIC AUDIT ERGONOMICS & ACCESSIBILITY ENHANCEMENTS
+   ========================================================================== */
+
+/* 1. Base Filter Bar & Filter Buttons for Shop */
+.filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  min-height: 44px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.filter-btn:hover {
+  border-color: var(--gold-primary);
+  color: var(--coffee-deep);
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: var(--gradient-gold);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.28);
+}
+
+/* 2. Accessible Ergonomic Quantity Picker */
+.quantity-picker {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.5rem;
+  background: #FFFFFF;
+}
+
+.qty-btn {
+  border: none;
+  background: none;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--coffee-deep);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.qty-btn:hover {
+  background-color: var(--gold-soft);
+  color: var(--gold-hover);
+}
+
+.qty-input {
+  width: 48px;
+  text-align: center;
+  border: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: transparent;
+  color: var(--coffee-deep);
+}
+
+/* 3. Small Buttons & Action Chips Touch Target Expansion (WCAG 2.5.5) */
+.btn-sm {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.hub-chip-btn {
+  min-height: 42px !important;
+  padding: 8px 14px !important;
+}
+
+.footer-links a {
+  padding: 0.35rem 0 !important;
+  display: inline-block !important;
+}
+
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

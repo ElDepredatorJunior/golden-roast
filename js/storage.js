@@ -110,7 +110,9 @@ class GoldenStorage {
 
   // Cart
   getCart() {
-    return this.get('cart', []);
+    const raw = this.get('cart', []);
+    if (!Array.isArray(raw)) return [];
+    return raw.filter(item => item && typeof item === 'object' && item.id);
   }
 
   setCart(cartItems) {
@@ -153,21 +155,26 @@ class GoldenStorage {
 
   calculateTotals() {
     const cart = this.getCart();
-    const subtotal = cart.reduce((sum, item) => sum + ((Number(item.price) || 0) * (Number(item.quantity) || 1)), 0);
+    const subtotal = cart.reduce((sum, item) => {
+      const q = Math.max(1, Math.min(99, Math.floor(Number(item.quantity)) || 1));
+      const p = Math.max(0, Number(item.price) || 0);
+      return sum + (p * q);
+    }, 0);
     const coupon = this.get('coupon', null);
     let discount = 0;
     if (coupon && (coupon.code === 'GOLDEN10' || coupon === 'GOLDEN10')) {
-      discount = subtotal * 0.10;
+      discount = Math.round(subtotal * 0.10 * 100) / 100;
     }
-    const delivery = subtotal >= 300 || subtotal === 0 ? 0 : 40.00;
-    const total = Math.max(0, subtotal - discount + delivery);
+    const cleanSubtotal = Math.round(subtotal * 100) / 100;
+    const delivery = cleanSubtotal >= 300 || cleanSubtotal === 0 ? 0 : 40.00;
+    const total = Math.round(Math.max(0, cleanSubtotal - discount + delivery) * 100) / 100;
     return {
-      subtotal,
+      subtotal: cleanSubtotal,
       discount,
       delivery,
       total,
-      hasFreeDelivery: subtotal >= 300,
-      freeDeliveryGap: Math.max(0, 300 - subtotal)
+      hasFreeDelivery: cleanSubtotal >= 300,
+      freeDeliveryGap: Math.round(Math.max(0, 300 - cleanSubtotal) * 100) / 100
     };
   }
 

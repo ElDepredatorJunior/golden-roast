@@ -112,6 +112,11 @@
 
     <main class="checkout-page-section">
     <div class="container">
+      <div style="margin-bottom: 2rem; text-align: center;">
+        <span class="section-tag" data-i18n="checkout.tag">Pago Seguro</span>
+        <h1 class="section-title" data-i18n="checkout.title">Finalizar Pedido</h1>
+      </div>
+
       <!-- Amazon 3-Step Progress Stepper -->
       <div class="checkout-stepper">
         <div class="checkout-step-node completed" id="stepNode1">
@@ -380,7 +385,7 @@
 
             <!-- Coupon Input -->
             <div class="summary-coupon-box">
-              <input type="text" id="couponCodeInput" placeholder="Código: GOLDEN10">
+              <input type="text" id="couponCodeInput" placeholder="Código: GOLDEN10" aria-label="Código de Descuento">
               <button type="button" id="btnApplyCouponCode">Aplicar</button>
             </div>
             <div id="couponFeedbackMsg" style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.85rem; display: none;"></div>
@@ -613,7 +618,7 @@
             <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
           </p>
           <form id="newsletterForm" class="footer-newsletter-box">
-            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder" aria-label="Tu correo electrónico para el boletín">
             <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
           </form>
         </div>
@@ -925,7 +930,10 @@
       }
     }
 
+    let isOrderSubmitting = false;
+
     function handleAmazonCheckout() {
+      if (isOrderSubmitting) return;
       const cart = goldenStorage.getCart();
       if (!cart || cart.length === 0) {
         alert('Tu bolsa de compras está vacía.');
@@ -963,6 +971,14 @@
       }
 
       // Trigger Amazon POS processing animation
+      isOrderSubmitting = true;
+      const payBtn = document.getElementById('btnPlaceOrderAmazon');
+      if (payBtn) {
+        payBtn.disabled = true;
+        payBtn.style.opacity = '0.6';
+        payBtn.style.cursor = 'not-allowed';
+      }
+
       const overlay = document.getElementById('posProcessingOverlay');
       const msg = document.getElementById('posProcessingMsg');
       const sub = document.getElementById('posProcessingSub');
@@ -1009,6 +1025,13 @@
         // Persist order in GoldenStorage
         goldenStorage.addOrder(orderData);
         goldenStorage.clearCart();
+        goldenStorage.remove('coupon');
+        isOrderSubmitting = false;
+        if (payBtn) {
+          payBtn.disabled = false;
+          payBtn.style.opacity = '';
+          payBtn.style.cursor = '';
+        }
 
         // Update stepper to completed
         const step2 = document.getElementById('stepNode2');

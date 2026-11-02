@@ -160,9 +160,9 @@
           <!-- Quantity & Add to Bag -->
           <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--surface-border);">
             <div class="quantity-picker" style="display: inline-flex; align-items: center; border: 1px solid var(--surface-border); border-radius: var(--radius-full); padding: 0.25rem 0.5rem; background: #FFFFFF;">
-              <button class="qty-btn btn-qty-dec" style="border: none; background: none; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem;">-</button>
-              <input type="text" class="qty-input" value="1" readonly data-qty-for="exfoliante" style="width: 40px; text-align: center; border: none; font-weight: 700;">
-              <button class="qty-btn btn-qty-inc" style="border: none; background: none; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem;">+</button>
+              <button class="qty-btn btn-qty-dec" aria-label="Disminuir cantidad" type="button">-</button>
+              <input type="text" class="qty-input" value="1" readonly data-qty-for="exfoliante" style="width: 40px; text-align: center; border: none; font-weight: 700;" aria-label="Cantidad seleccionada">
+              <button class="qty-btn btn-qty-inc" aria-label="Aumentar cantidad" type="button">+</button>
             </div>
 
             <button class="btn btn-primary" data-add-cart="exfoliante" style="flex: 1;" data-i18n="btn.add_to_cart">
@@ -312,7 +312,7 @@
             <strong style="color: var(--gold-pale);" data-i18n="footer.team_label">Integrantes:</strong> Joselin Cáceres, Sofia López, Ángel Guerra, Génesis López.
           </p>
           <form id="newsletterForm" class="footer-newsletter-box">
-            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder">
+            <input type="email" placeholder="Tu correo electrónico" required class="footer-newsletter-input" data-i18n-placeholder="footer.newsletter_placeholder" aria-label="Tu correo electrónico para el boletín">
             <button type="submit" class="footer-newsletter-btn" data-i18n="footer.newsletter_btn">Unirse</button>
           </form>
         </div>
