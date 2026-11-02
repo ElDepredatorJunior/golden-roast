@@ -5814,3 +5814,7 @@ body.mobile-nav-open {
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
   transform: translateY(-2px);
 }
+
+
+/* Ensure top-announcement is hidden globally */
+.top-announcement { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; }
