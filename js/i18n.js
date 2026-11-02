@@ -24,6 +24,7 @@ const I18N_DICTIONARY = {
     // Hero Section
     'hero.badge_nature': '✦ 100% Inspirado en la Naturaleza',
     'hero.badge_sub': 'Cosmética Artesanal de Alta Pureza',
+    'hero.badge_edition': 'Fórmula Botánica Prototipo · Comayagua, Honduras',
     'hero.title_pre': 'El poder renovador del',
     'hero.title_coffee': 'Café',
     'hero.title_and': 'y la suavidad pura de la',
@@ -287,6 +288,7 @@ const I18N_DICTIONARY = {
     // Hero Section
     'hero.badge_nature': '✦ 100% Inspired by Nature',
     'hero.badge_sub': 'High-Purity Artisan Skincare',
+    'hero.badge_edition': 'Prototype Botanical Formula · Comayagua, Honduras',
     'hero.title_pre': 'The renewing power of',
     'hero.title_coffee': 'Coffee',
     'hero.title_and': 'and the pure gentleness of',

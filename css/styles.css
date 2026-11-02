@@ -1,61 +1,65 @@
 /* ==========================================================================
-   GOLDEN ROAST — ENTERPRISE LUXURY DESIGN SYSTEM
-   Windows 11 Fluent Design × Apple Design Language × Cosmética Natural
+   GOLDEN ROAST — ENTERPRISE LUXURY DESIGN SYSTEM (V3 REMODEL)
+   Obsidian & Champagne Gold × Plus Jakarta Sans × Ultra-Responsive Architecture
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Golden Roast Signature Palette */
-  --gold-primary: #C59323;
-  --gold-hover: #A67812;
-  --gold-light: #F5C542;
-  --gold-pale: #F7E4B2;
-  --gold-soft: #FCF5E5;
-  --gold-gradient: linear-gradient(135deg, #D4A017 0%, #F5C542 50%, #B8860B 100%);
-  --gold-glow: rgba(197, 147, 35, 0.28);
+  /* Enterprise Champagne Gold Signature Palette */
+  --gold-primary: #C99728;
+  --gold-hover: #AA7D17;
+  --gold-light: #F2D27A;
+  --gold-pale: #F8ECD0;
+  --gold-soft: #FDF9EE;
+  --gold-gradient: linear-gradient(135deg, #ECC870 0%, #C99728 50%, #9C7215 100%);
+  --gold-glow: rgba(201, 151, 40, 0.28);
+  --gold-accent-border: rgba(201, 151, 40, 0.26);
 
-  --coffee-deep: #1F130E;
-  --coffee-dark: #2E1B13;
-  --coffee-medium: #543423;
-  --coffee-light: #7D533C;
-  --coffee-tint: #F3ECE6;
+  /* Deep Enterprise Obsidian Charcoal & Espresso */
+  --coffee-deep: #0D0E12;
+  --coffee-dark: #15171F;
+  --coffee-medium: #3A3835;
+  --coffee-light: #64605A;
+  --coffee-tint: #F0EDE8;
 
-  --cream-bg: #FAF6F0;
+  /* Crisp Modern Canvas & Pure Ceramic White Surfaces */
+  --cream-bg: #F8F9FA;
   --cream-card: #FFFFFF;
-  --cream-alt: #F4EDE2;
-  --surface-border: rgba(31, 19, 14, 0.08);
-  --surface-border-subtle: rgba(197, 147, 35, 0.22);
+  --cream-alt: #F1F3F5;
+  --surface-border: rgba(13, 14, 18, 0.08);
+  --surface-border-subtle: rgba(201, 151, 40, 0.24);
 
-  --text-main: #1D1D1F;
-  --text-muted: #515154;
-  --text-light: #86868B;
+  /* High-Contrast Luxury Typography */
+  --text-main: #0D0E12;
+  --text-muted: #4B5162;
+  --text-light: #7E8494;
   --text-white: #FFFFFF;
 
-  --success: #1B5E20;
-  --success-bg: #E8F5E9;
-  --danger: #C62828;
+  --success: #1E6B39;
+  --success-bg: #E8F5EC;
+  --danger: #D32F2F;
 
-  /* Typography: Apple Human Interface + Windows Fluent fallbacks */
-  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-heading: 'Playfair Display', "New York", Georgia, serif;
+  /* Typography: Plus Jakarta Sans for crisp enterprise feel + Playfair Display for editorial luxury */
+  --font-system: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
 
-  /* Fluent & Apple Metrics */
-  --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  /* Fluent & Enterprise Metrics */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
   --radius-full: 9999px;
 
-  /* Shadows: Fluent Acrylic Layered Depth */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(31, 19, 14, 0.06);
-  --shadow-lg: 0 16px 48px rgba(31, 19, 14, 0.09);
-  --shadow-fluent: 0 12px 32px rgba(31, 19, 14, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
-  --shadow-gold: 0 10px 28px rgba(197, 147, 35, 0.28);
+  /* Layered Depth & Elevation Shadows */
+  --shadow-sm: 0 2px 8px rgba(13, 14, 18, 0.04);
+  --shadow-md: 0 8px 24px rgba(13, 14, 18, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 20px 48px -8px rgba(13, 14, 18, 0.1), 0 0 1px rgba(0, 0, 0, 0.08);
+  --shadow-fluent: 0 14px 36px rgba(13, 14, 18, 0.07), 0 2px 6px rgba(0, 0, 0, 0.02);
+  --shadow-gold: 0 12px 32px rgba(201, 151, 40, 0.28);
 
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --container-max: 1240px;
 }
 
@@ -5818,3 +5822,339 @@ body.mobile-nav-open {
 
 /* Ensure top-announcement is hidden globally */
 .top-announcement { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; }
+
+
+/* ==========================================================================
+   ENTERPRISE V3 LUXURY DESIGN EXTENSIONS & ANIMATIONS
+   ========================================================================== */
+
+/* Enhanced Header Glassmorphism */
+.main-header {
+  background: rgba(248, 249, 250, 0.86) !important;
+  backdrop-filter: blur(28px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+  border-bottom: 1px solid rgba(201, 151, 40, 0.2) !important;
+}
+
+.main-header.scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(201, 151, 40, 0.32) !important;
+  box-shadow: 0 12px 32px rgba(13, 14, 18, 0.08), 0 0 20px rgba(201, 151, 40, 0.1) !important;
+}
+
+/* Enterprise Hero Pill */
+.hero-enterprise-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1.15rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(201, 151, 40, 0.35);
+  border-radius: var(--radius-full);
+  font-size: 0.785rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0D0E12;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.35rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.enterprise-beacon {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: enterpriseBeaconPulse 2s infinite;
+}
+
+@keyframes enterpriseBeaconPulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Staggered Reveal Animation System */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-item.is-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Enterprise Interactive Buttons with Shimmer Reflection */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #121318 0%, #1F212A 100%) !important;
+  color: #F8ECD0 !important;
+  border: 1px solid rgba(201, 151, 40, 0.45) !important;
+  box-shadow: 0 8px 26px rgba(13, 14, 18, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: rotate(25deg);
+  transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover::after {
+  left: 135%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  border-color: #ECC870 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 14px 36px rgba(201, 151, 40, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+.btn-outline {
+  border: 1px solid rgba(13, 14, 18, 0.16) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(12px) !important;
+  color: var(--text-main) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold-primary) !important;
+  background: #FFFFFF !important;
+  color: var(--coffee-deep) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(13, 14, 18, 0.08) !important;
+}
+
+/* Enterprise Product Cards */
+.product-enterprise-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(13, 14, 18, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 4px 20px -2px rgba(13, 14, 18, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+  overflow: hidden !important;
+}
+
+.product-enterprise-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: rgba(201, 151, 40, 0.42) !important;
+  box-shadow: 0 24px 52px -10px rgba(13, 14, 18, 0.12), 0 0 28px rgba(201, 151, 40, 0.18) !important;
+}
+
+.product-thumb-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.product-enterprise-card:hover .product-thumb-container img {
+  transform: scale(1.07) !important;
+}
+
+/* Trust / Value Cards Polish */
+.trust-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(13, 14, 18, 0.07) !important;
+  border-radius: 22px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 4px 18px rgba(13, 14, 18, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.trust-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(201, 151, 40, 0.35) !important;
+  box-shadow: 0 16px 36px rgba(13, 14, 18, 0.08), 0 0 20px rgba(201, 151, 40, 0.14) !important;
+}
+
+.trust-icon {
+  background: linear-gradient(135deg, rgba(201, 151, 40, 0.18), rgba(201, 151, 40, 0.06)) !important;
+  color: #B5851E !important;
+  border: 1px solid rgba(201, 151, 40, 0.28) !important;
+}
+
+/* ==========================================================================
+   ENTERPRISE MOBILE FLOATING ACTION DOCK
+   ========================================================================== */
+.mobile-bottom-dock {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 90px !important;
+  }
+
+  .mobile-bottom-dock {
+    display: flex;
+    position: fixed;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    left: 14px;
+    right: 14px;
+    max-width: 420px;
+    margin: 0 auto;
+    height: 64px;
+    background: rgba(13, 14, 19, 0.94);
+    backdrop-filter: blur(28px) saturate(200%);
+    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    border: 1px solid rgba(201, 151, 40, 0.35);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.45), 0 0 25px rgba(201, 151, 40, 0.18);
+    border-radius: var(--radius-full);
+    z-index: 1080;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 0.5rem;
+    animation: dockEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes dockEntrance {
+    from {
+      transform: translateY(120%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: rgba(255, 255, 255, 0.65);
+    background: transparent;
+    border: none;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.35rem 0.65rem;
+    border-radius: 14px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    min-width: 58px;
+  }
+
+  .dock-item:active {
+    transform: scale(0.92);
+  }
+
+  .dock-item.active {
+    color: #ECC870;
+  }
+
+  .dock-item.active .dock-icon {
+    stroke: #ECC870;
+    filter: drop-shadow(0 0 8px rgba(236, 200, 112, 0.45));
+  }
+
+  .dock-item .dock-icon {
+    width: 21px;
+    height: 21px;
+    transition: all 0.2s ease;
+  }
+
+  .dock-item.dock-whatsapp {
+    color: #25D366;
+  }
+
+  .dock-item.dock-whatsapp .dock-icon {
+    fill: #25D366;
+  }
+
+  .dock-cart-badge-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dock-cart-badge-wrap .cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: linear-gradient(135deg, #ECC870, #C99728);
+    color: #0D0E12;
+    font-size: 0.65rem;
+    font-weight: 800;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Mobile Drawer Polish */
+  .main-nav {
+    background: rgba(13, 14, 19, 0.96) !important;
+    backdrop-filter: blur(36px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
+    border-left: 1px solid rgba(201, 151, 40, 0.3) !important;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5) !important;
+    color: #FFFFFF !important;
+  }
+
+  .main-nav .brand-name {
+    color: #FFFFFF !important;
+  }
+
+  .main-nav .mobile-nav-close {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(201, 151, 40, 0.25) !important;
+    color: #FFFFFF !important;
+  }
+
+  .main-nav .nav-links a {
+    color: rgba(255, 255, 255, 0.78) !important;
+    padding: 0.9rem 1.15rem !important;
+    border-radius: 14px !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .main-nav .nav-links a:hover,
+  .main-nav .nav-links a.active {
+    background: rgba(201, 151, 40, 0.16) !important;
+    color: #ECC870 !important;
+    border-left: 3px solid #C99728 !important;
+  }
+
+  .main-nav .nav-account-btn {
+    background: linear-gradient(135deg, rgba(201, 151, 40, 0.2), rgba(201, 151, 40, 0.08)) !important;
+    border: 1px solid rgba(201, 151, 40, 0.35) !important;
+    color: #ECC870 !important;
+  }
+}
