@@ -277,6 +277,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initMobileDock();
 
+  // 6.2 Precision QR Copy Link Handler
+  document.querySelectorAll('[data-copy-link]').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const link = btn.getAttribute('data-copy-link');
+      if (link && navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(link);
+          const labelSpan = btn.querySelector('span');
+          const origText = labelSpan ? labelSpan.textContent : 'Copiar';
+          if (labelSpan) labelSpan.textContent = '¡Copiado!';
+          btn.style.borderColor = '#10B981';
+          btn.style.color = '#10B981';
+          if (window.cartManager && typeof window.cartManager.showToast === 'function') {
+            window.cartManager.showToast('Enlace copiado al portapapeles');
+          }
+          setTimeout(() => {
+            if (labelSpan) labelSpan.textContent = origText;
+            btn.style.borderColor = '';
+            btn.style.color = '';
+          }, 2000);
+        } catch (err) {
+          console.error(err);
+        }
+      }
+    });
+  });
+
+
   // 7. Newsletter Subscription Simulation
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
