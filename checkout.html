@@ -903,6 +903,23 @@
       const miniListEl = document.getElementById('checkoutMiniList');
       if (!miniListEl) return;
 
+      // Sync active coupon input & feedback on render
+      const activeCoupon = goldenStorage.get('coupon', null);
+      const activeCode = typeof activeCoupon === 'string' ? activeCoupon : (activeCoupon && activeCoupon.code ? activeCoupon.code : '');
+      const activePct = goldenStorage.getCouponDiscountPercent(activeCode);
+      const cInput = document.getElementById('couponCodeInput');
+      const cFeedback = document.getElementById('couponFeedbackMsg');
+      if (activePct > 0) {
+        if (cInput && !cInput.value) cInput.value = activeCode;
+        if (cFeedback) {
+          cFeedback.style.display = 'block';
+          cFeedback.style.color = '#0E9F6E';
+          cFeedback.innerText = `✓ ¡Cupón ${activeCode} aplicado! ${activePct}% de descuento concedido.`;
+        }
+      } else if (!activeCode && cFeedback && cInput && !cInput.value) {
+        cFeedback.style.display = 'none';
+      }
+
       miniListEl.innerHTML = '';
       if (!cart || cart.length === 0) {
         const emptyMsg = (window.i18n && window.i18n.currentLang === 'es') ? 'Tu bolsa está vacía.<br><a href="tienda.html" class="btn btn-outline btn-sm" style="margin-top: 0.75rem;">Ver Catálogo</a>' : 'Your bag is empty.<br><a href="tienda.html" class="btn btn-outline btn-sm" style="margin-top: 0.75rem;">View Shop</a>';
@@ -1048,6 +1065,8 @@
         items: cart,
         subtotal: totals.subtotal,
         discount: totals.discount,
+        couponCode: totals.couponCode || null,
+        couponPercent: totals.couponPercent || 0,
         delivery: totals.delivery,
         total: totals.total,
         status: 'Confirmado (En Preparación)'
@@ -1090,8 +1109,9 @@
         document.getElementById('modalOrderPayMethod').innerText = orderData.paymentMethod;
         document.getElementById('modalOrderTotal').innerText = 'L ' + orderData.total.toFixed(2);
 
-        // WhatsApp direct link
-        const waText = encodeURIComponent(`Hola equipo Golden Roast, acabo de registrar el pedido #${orderData.orderNumber} a nombre de ${orderData.customerName} por un total de L ${orderData.total.toFixed(2)}. Mi punto de entrega es: ${orderData.deliveryLocation}.`);
+        // WhatsApp direct link with discount detail
+        const discountWa = orderData.discount > 0 ? ` (Descuento ${orderData.couponCode ? orderData.couponCode + ' ' : ''}-${orderData.couponPercent}%: -L ${orderData.discount.toFixed(2)})` : '';
+        const waText = encodeURIComponent(`Hola equipo Golden Roast, acabo de registrar el pedido #${orderData.orderNumber} a nombre de ${orderData.customerName} por un total de L ${orderData.total.toFixed(2)}${discountWa}. Mi punto de entrega es: ${orderData.deliveryLocation}.`);
         const waBtn = document.getElementById('btnModalWhatsapp');
         if (waBtn) waBtn.href = 'https://wa.me/50499208330?text=' + waText;
 
@@ -1108,6 +1128,13 @@
             row.innerHTML = '<span>' + it.quantity + ' × ' + title + '</span><strong>L ' + lineTot + '</strong>';
             modalItems.appendChild(row);
           });
+          if (orderData.discount > 0) {
+            const discRow = document.createElement('div');
+            discRow.className = 'receipt-item-line';
+            discRow.style.color = '#0E9F6E';
+            discRow.innerHTML = `<span>Descuento (${orderData.couponCode ? orderData.couponCode + ' ' : ''}${orderData.couponPercent}%):</span><strong>-L ${orderData.discount.toFixed(2)}</strong>`;
+            modalItems.appendChild(discRow);
+          }
         }
 
         // Copy order number button

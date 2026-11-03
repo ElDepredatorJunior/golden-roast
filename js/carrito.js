@@ -577,6 +577,19 @@ class CartManager {
     const btnCoupon = document.getElementById('btnApplyCoupon');
     const couponInput = document.getElementById('couponInput');
     const couponFeedback = document.getElementById('couponFeedback');
+
+    // Sync input & feedback with active coupon in storage on render
+    const activeCoupon = this.storage ? this.storage.get('coupon', null) : null;
+    const activeCode = typeof activeCoupon === 'string' ? activeCoupon : (activeCoupon && activeCoupon.code ? activeCoupon.code : '');
+    const activePct = this.storage ? this.storage.getCouponDiscountPercent(activeCode) : 0;
+    if (activePct > 0) {
+      if (couponInput && !couponInput.value) couponInput.value = activeCode;
+      if (couponFeedback) {
+        couponFeedback.style.color = '#15803d';
+        couponFeedback.textContent = lang === 'es' ? `✓ ¡Cupón ${activeCode} aplicado! (${activePct}% OFF)` : `✓ Coupon ${activeCode} applied! (${activePct}% OFF)`;
+      }
+    }
+
     if (btnCoupon && couponInput && !btnCoupon._initialized) {
       btnCoupon._initialized = true;
       btnCoupon.addEventListener('click', (e) => {
