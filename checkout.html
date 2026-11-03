@@ -424,7 +424,7 @@
 
             <!-- Coupon Input -->
             <div class="summary-coupon-box">
-              <input type="text" id="couponCodeInput" placeholder="Código: GOLDEN10" aria-label="Código de Descuento">
+              <input type="text" id="couponCodeInput" placeholder="Código (ej. GOLDEN10)" aria-label="Código de Descuento">
               <button type="button" id="btnApplyCouponCode">Aplicar</button>
             </div>
             <div id="couponFeedbackMsg" style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.85rem; display: none;"></div>
@@ -436,7 +436,7 @@
             </div>
 
             <div id="chkDiscountRow" style="display: none; justify-content: space-between; margin-bottom: 0.65rem; font-size: 0.9rem; color: #15803d;">
-              <span>Descuento Aplicado (10%):</span>
+              <span id="chkDiscountLabel">Descuento Aplicado:</span>
               <span id="chkDiscount" style="font-weight: 700;">-L 0.00</span>
             </div>
 
@@ -858,7 +858,7 @@
         });
       });
 
-      // Coupon System (e.g. GOLDEN10)
+      // Coupon System (Multi-Coupon Architecture)
       const btnCoupon = document.getElementById('btnApplyCouponCode');
       const couponInput = document.getElementById('couponCodeInput');
       const couponFeedback = document.getElementById('couponFeedbackMsg');
@@ -866,12 +866,13 @@
       if (btnCoupon && couponInput) {
         btnCoupon.addEventListener('click', () => {
           const code = (couponInput.value || '').trim().toUpperCase();
-          if (code === 'GOLDEN10') {
-            goldenStorage.set('coupon', 'GOLDEN10');
+          const percent = goldenStorage.getCouponDiscountPercent(code);
+          if (percent > 0) {
+            goldenStorage.set('coupon', { code, percent });
             if (couponFeedback) {
               couponFeedback.style.display = 'block';
               couponFeedback.style.color = '#0E9F6E';
-              couponFeedback.innerText = '✓ ¡Cupón GOLDEN10 aplicado! 10% de descuento concedido.';
+              couponFeedback.innerText = `✓ ¡Cupón ${code} aplicado! ${percent}% de descuento concedido.`;
             }
           } else if (code === '') {
             goldenStorage.remove('coupon');
@@ -880,7 +881,7 @@
             if (couponFeedback) {
               couponFeedback.style.display = 'block';
               couponFeedback.style.color = '#E02424';
-              couponFeedback.innerText = '✗ Código inválido. Usa GOLDEN10 para 10% de descuento.';
+              couponFeedback.innerText = '✗ Código inválido. Introduce un cupón activo (ej. GOLDEN10, BOTANICAL15, COFFEE20, HONEY25, GOLDENDUO).';
             }
           }
           renderCheckoutSummary();
@@ -934,9 +935,14 @@
       if (document.getElementById('chkTotalUsd')) document.getElementById('chkTotalUsd').innerText = '(aprox. $' + (totals.total / 24).toFixed(2) + ' USD)';
 
       const discRow = document.getElementById('chkDiscountRow');
+      const discLabel = document.getElementById('chkDiscountLabel');
       if (discRow) {
         if (totals.discount > 0) {
           discRow.style.display = 'flex';
+          if (discLabel) {
+            const isEs = !window.i18n || window.i18n.currentLang === 'es';
+            discLabel.innerText = isEs ? `Descuento Aplicado (${totals.couponPercent || 10}%):` : `Discount Applied (${totals.couponPercent || 10}%):`;
+          }
           document.getElementById('chkDiscount').innerText = '-L ' + totals.discount.toFixed(2);
         } else {
           discRow.style.display = 'none';

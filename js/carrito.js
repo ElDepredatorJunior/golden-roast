@@ -550,6 +550,11 @@ class CartManager {
     if (discountRow && discountEl) {
       if (totals.discount > 0) {
         discountRow.style.display = 'flex';
+        const labelSpan = discountRow.querySelector('span:first-child');
+        if (labelSpan) {
+          const pct = totals.couponPercent || 10;
+          labelSpan.textContent = lang === 'es' ? `Descuento (${pct}%):` : `Discount (${pct}%):`;
+        }
         discountEl.textContent = `-L ${totals.discount.toFixed(2)}`;
       } else {
         discountRow.style.display = 'none';
@@ -577,17 +582,22 @@ class CartManager {
       btnCoupon.addEventListener('click', (e) => {
         e.preventDefault();
         const code = couponInput.value.trim().toUpperCase();
-        if (code === 'GOLDEN10') {
-          if (this.storage) this.storage.set('coupon', 'GOLDEN10');
+        const percent = this.storage ? this.storage.getCouponDiscountPercent(code) : (code === 'GOLDEN10' ? 10 : 0);
+        if (percent > 0) {
+          if (this.storage) this.storage.set('coupon', { code, percent });
           if (couponFeedback) {
             couponFeedback.style.color = '#15803d';
-            couponFeedback.textContent = lang === 'es' ? '✓ ¡Cupón GOLDEN10 aplicado! (10% OFF)' : '✓ Coupon GOLDEN10 applied! (10% OFF)';
+            couponFeedback.textContent = lang === 'es' ? `✓ ¡Cupón ${code} aplicado! (${percent}% OFF)` : `✓ Coupon ${code} applied! (${percent}% OFF)`;
           }
+          this.renderCartPage();
+        } else if (!code) {
+          if (this.storage) this.storage.remove('coupon');
+          if (couponFeedback) couponFeedback.textContent = '';
           this.renderCartPage();
         } else {
           if (couponFeedback) {
             couponFeedback.style.color = '#b91c1c';
-            couponFeedback.textContent = lang === 'es' ? 'Código no válido.' : 'Invalid coupon code.';
+            couponFeedback.textContent = lang === 'es' ? 'Código no válido. Prueba GOLDEN10, BOTANICAL15, COFFEE20, HONEY25 o GOLDENDUO.' : 'Invalid coupon code. Try GOLDEN10, BOTANICAL15, COFFEE20, HONEY25 or GOLDENDUO.';
           }
         }
       });

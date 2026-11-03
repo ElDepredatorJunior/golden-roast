@@ -153,6 +153,26 @@ class GoldenStorage {
     window.dispatchEvent(new CustomEvent('golden_cart_updated', { detail: { cart: [] } }));
   }
 
+  static get VALID_COUPONS() {
+    return {
+      GOLDEN10: 10,
+      BOTANICAL15: 15,
+      COFFEE20: 20,
+      HONEY25: 25,
+      GOLDENDUO: 30
+    };
+  }
+
+  getValidCoupons() {
+    return GoldenStorage.VALID_COUPONS;
+  }
+
+  getCouponDiscountPercent(code) {
+    if (!code) return 0;
+    const clean = String(code).trim().toUpperCase();
+    return GoldenStorage.VALID_COUPONS[clean] || 0;
+  }
+
   calculateTotals() {
     const cart = this.getCart();
     const subtotal = cart.reduce((sum, item) => {
@@ -161,16 +181,17 @@ class GoldenStorage {
       return sum + (p * q);
     }, 0);
     const coupon = this.get('coupon', null);
-    let discount = 0;
-    if (coupon && (coupon.code === 'GOLDEN10' || coupon === 'GOLDEN10')) {
-      discount = Math.round(subtotal * 0.10 * 100) / 100;
-    }
+    const rawCode = typeof coupon === 'string' ? coupon : (coupon && coupon.code ? coupon.code : null);
+    const percent = this.getCouponDiscountPercent(rawCode);
+    const discount = percent > 0 ? Math.round(subtotal * (percent / 100) * 100) / 100 : 0;
     const cleanSubtotal = Math.round(subtotal * 100) / 100;
     const delivery = cleanSubtotal >= 300 || cleanSubtotal === 0 ? 0 : 40.00;
     const total = Math.round(Math.max(0, cleanSubtotal - discount + delivery) * 100) / 100;
     return {
       subtotal: cleanSubtotal,
       discount,
+      couponCode: percent > 0 ? String(rawCode).trim().toUpperCase() : null,
+      couponPercent: percent,
       delivery,
       total,
       hasFreeDelivery: cleanSubtotal >= 300,
